@@ -1,0 +1,17 @@
+:root {
+  --red-color: #c32929;
+  --black-color: #222222;
+  --dark-grey-color: #353535;
+  --light-grey-color: #767676;
+  --gold-color: #b9a16b;
+  --small-font: 0.8rem;
+  --medium-font: 1rem;
+  --big-font: 2rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Jost", sans-serif;
+}
