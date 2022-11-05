@@ -72,29 +72,35 @@ body {
 /* header end */
 
 /* landing start */
-.landing .navbar {
+.landing .container-fluid {
   top: 1rem;
   left: 0;
   z-index: 2;
 }
 
-.landing .navbar .menu-icon {
-  width: 2rem;
-  margin-top: 0.5rem;
-  margin-left: 0.5rem;
+@media (max-width: 992px) {
+  .landing .container-fluid {
+    background-color: white;
+    top: 0;
+  }
 }
 
-.landing .navbar .menu-icon span {
+.landing .container-fluid .menu-icon {
+  width: 2rem;
+  margin: 0.5rem 0;
+}
+
+.landing .container-fluid .menu-icon span {
   background-color: var(--black-color);
-  margin-bottom: 0.5rem;
   height: 2px;
 }
 
-.landing .navbar .menu-icon span:first-child {
+.landing .container-fluid .menu-icon span:first-child {
   width: 75%;
+  margin-bottom: 0.5rem;
 }
 
-.landing .navbar .menu-icon span:last-child {
+.landing .container-fluid .menu-icon span:last-child {
   width: 50%;
 }
 
@@ -105,7 +111,7 @@ body {
   font-size: var(--medium-font);
 }
 
-.navbar .head-title div {
+.container-fluid .head-title div {
   background-color: var(--red-color);
   width: 2rem;
   height: 2rem;
@@ -116,7 +122,13 @@ body {
   -o-border-radius: 50%;
 }
 
-.icons ul li {
+@media (min-width: 992px) {
+  .container-fluid .head-title {
+    flex-grow: 1;
+  }
+}
+
+.icons li {
   padding: 0 1rem;
   font-size: 1.5rem;
 }
@@ -129,6 +141,12 @@ body {
   -moz-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   -o-transform: translateY(-50%);
+}
+
+@media (max-width: 576px) {
+  .carousel-indicators {
+    margin-left: -1rem !important;
+  }
 }
 
 .carousel-indicators button[data-bs-target] {

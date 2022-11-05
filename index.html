@@ -22,7 +22,7 @@
 
 <body>
     <!-- Header start -->
-    <header class="header d-flex align-items-center p-3 justify-content-between">
+    <header class="header d-none d-lg-flex align-items-center p-3 justify-content-between">
         <nav class="nav d-flex justify-content-between">
             <a class="nav-link active text-white p-0 me-4" aria-current="page" href="#">Shipping</a>
             <a class="nav-link text-white p-0 me-4" href="#">FAQ</a>
@@ -58,17 +58,15 @@
     <!-- Header end -->
     <!-- Landing start -->
     <section class="landing  position-relative mb-3">
-        <div
-            class="navbar position-absolute bg-transparent d-flex justify-content-between align-items-center py-1 w-100">
-            <div class="menu-icon d-flex justify-content-start flex-wrap">
+        <div class="container-fluid d-flex position-absolute justify-content-between align-items-center">
+            <div class="menu-icon d-flex justify-content-start align-items-center flex-wrap">
                 <span></span>
                 <span></span>
             </div>
-            <ul class="nav nav-tabs">
-                </li>
+            <ul class="nav nav-tabs d-none d-lg-flex">
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-uppercase fw-bold" data-bs-toggle="dropdown" href="#"
-                        role="button" aria-expanded="false">Home</a>
+                    <a class="nav-link dropdown-toggle text-uppercase" data-bs-toggle="dropdown" href="#" role="button"
+                        aria-expanded="false">Home</a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="#">Home 1</a></li>
                         <li><a class="dropdown-item" href="#">Home 2</a></li>
@@ -117,21 +115,21 @@
                     <a class="nav-link" href="#">Contact</a>
                 </li>
             </ul>
-            <div class="head-title d-flex align-items-center ps-5">
-                <h1 class="px-3">Exclusv</h1>
+            <div class="head-title align-items-center d-flex">
+                <h1 class="pe-3 mb-0">Exclusv</h1>
                 <div></div>
             </div>
-            <div class="icons ms-auto me-5 align-items-center">
-                <ul class="list-unstyled d-flex justify-content-end mb-0">
-                    <li><i class="fa-solid fa-magnifying-glass"></i></li>
-                    <li><i class="fa-solid fa-user"></i></li>
-                    <li><i class="fa-regular fa-heart"></i></li>
-                    <li><i class="fa-solid fa-bag-shopping"></i></li>
-                </ul>
-            </div>
+            <ul class="icons list-unstyled justify-content-end mb-0 d-none d-lg-flex">
+                <li><i class="fa-solid fa-magnifying-glass"></i></li>
+                <li><i class="fa-solid fa-user"></i></li>
+                <li><i class="fa-regular fa-heart"></i></li>
+                <li><i class="fa-solid fa-bag-shopping"></i></li>
+            </ul>
+            <a href="#" class="text-decoration-none fs-4 d-flex d-lg-none text-dark"><i
+                    class="fa-solid fa-bag-shopping"></i></a>
         </div>
         <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
-            <div class="carousel-indicators align-items-start flex-column m-0">
+            <div class="carousel-indicators flex-column m-0">
                 <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="0" class="active"
                     aria-current="true" aria-label="Slide 1"></button>
                 <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="1"
@@ -144,7 +142,7 @@
                     <img src="./images/landing/2.jpg" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="./imageslanding//3.jpg" class="d-block w-100" alt="...">
+                    <img src="./images/landing/3.jpg" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
                     <img src="./images/landing/5.jpg" class="d-block w-100" alt="...">
@@ -152,12 +150,7 @@
             </div>
         </div>
     </section>
-
-
     <!-- Landing end -->
-
-
-    <!-- <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
