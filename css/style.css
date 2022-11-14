@@ -717,6 +717,9 @@ del {
   .list_brand {
     flex-direction: column;
   }
+  .brand_section{
+    height:auto;
+  }
   .list_brand li {
     width: 100%;
     display: flex;
