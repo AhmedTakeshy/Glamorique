@@ -52,6 +52,7 @@ body{
 }
 .our_story,.our_Mission{
     width: 100%;
+   font-family: var(--font-pragraph);
    
 }
 .our_Mission{
