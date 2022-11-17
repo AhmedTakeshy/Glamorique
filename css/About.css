@@ -1,10 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@200;300;400;600;700&display=swap');
 :root {
   --font-TagName: "Roboto Condensed", sans-serif;
   --font-pragraph: "Amiri", serif;
-  --margin-top-sections: 50px;
-  --margin-bottom-sections: 50px;
+    --font-tag2: 'Berkshire Swash',
+            cursive;
+        --font-pargraph2: 'Source Serif Pro',
+            serif;
+            --margin-top-sections: 50px;
+                --margin-bottom-sections: 50px;
 }
 *{
     box-sizing: border-box;
@@ -25,18 +31,20 @@ body{
     width: 100%;
     background-color: #fff;
     color:#000;
+   
 }
 .Tag_name_content{
     font-family: var(--font-TagName);
-    font-size: 70px;
+    font-size: 50px;
     font-weight: 700;
     margin-top: var(--margin-top-sections);
-
+margin-top: 100px;
+    margin-bottom: 50px;
 }
 .banner_about{
     width: 100%;
-    height: 600px;
-    background-image: url(".././images/about_us/2.webp");
+    height: 400px;
+    background-image: url(".././images/about_us/banner1.jpg");
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -44,8 +52,8 @@ body{
    
 }
 /* < !-- start header section --> */
-/* < !--  start our_discrption_section section --> */
-.our_discrption_section{
+/* < !--  start our_discription_section section --> */
+.our_discription_section{
     width: 100%;
     height: auto;
     margin-top: var(--margin-top-sections);
@@ -61,7 +69,112 @@ body{
 .titel{
     margin-bottom: 22px;
 }
-.discrption-our-story_bold,.discrption-our-Mission_bold{
+.discription-our-story_bold,.discription-our-Mission_bold{
     font-size: 18px;
 }
-/* < !-- end our_discrption_section section --> */
+/* < !-- end our_discription_section section --> */
+/* start our team  */
+.our-team{
+    width: 100%;
+    font-family: var(--font-TagName);
+    margin-top: var(--margin-top-sections);
+   height: auto;
+    background-color: rgb(214, 214, 214);
+    padding: 20px 0px;
+}
+
+.our-team h2{
+    font-family: var(--font-tag2);
+    font-size: 70px;
+}
+.member{
+    height: 300px;
+    overflow: hidden;
+   margin-top: 10px;
+ padding: 30px;
+ margin-bottom: 10px;
+}
+.photo-member{
+    height: 100%;
+   flex: 1;
+}
+ .photo-member img{
+   max-width: 100%;
+  max-height: 100%;
+  box-shadow: 1px 1px 1px rgb(124, 124, 124),-1px -1px 1px rgb(124, 124, 124);
+}
+ .discription-member{
+    flex: 2;
+    padding-left: 30px;
+ }
+ .member_name,.work-title{
+    width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        font-family: var(--font-pargraph2);
+        text-transform: uppercase;
+        margin-bottom: 12px;
+ }
+ .dis{
+    
+    line-height: 1.5;
+    padding-right: 10px;
+    font-family: var(--font-pragraph);
+ }
+.contact-way li a svg{
+    font-size: 30px;
+    cursor: pointer;
+    color:#000;
+}
+.contact-way{
+    width: 100%;
+}
+.contact-way li a svg:hover{
+    color:rgb(88, 51, 223);
+}
+/* end our team  */
+/* start media query */
+@media (max-width:767px) {
+    .Tag_name_content{
+        height: 200px;
+    }
+    .banner_about{
+        height: 200px;
+    }
+    .our-team-content{
+        flex-direction: column;
+        height: auto;
+    }
+    .member{
+        flex-direction: column;
+        height: auto;
+    }
+    .photo-member{
+        order: 1;
+        margin-bottom: 20px;
+    }
+     .discription-member{
+        order: 2;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        margin: 0;
+        padding: 0;
+    }
+    .contact{
+        width: 100%;
+    }
+    .contact-way{
+        width: 100%;
+    }
+        .contact-way li a{
+            width: 25%;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+}
+/* end media query */
