@@ -73,9 +73,17 @@ margin-top: 100px;
     font-size: 18px;
 }
 /* < !-- end our_discription_section section --> */
+.brand_section{
+    margin-top: 50px !important;
+    height: 100px !important;
+}
+.Partners{
+    margin-bottom: 20px;
+}
 /* start our team  */
 .our-team{
     width: 100%;
+  
     font-family: var(--font-TagName);
     margin-top: var(--margin-top-sections);
    height: auto;
@@ -142,6 +150,10 @@ margin-top: 100px;
     .banner_about{
         height: 200px;
     }
+        .brand_section {
+            margin-top: 50px !important;
+            height: auto !important;
+        }
     .our-team-content{
         flex-direction: column;
         height: auto;
