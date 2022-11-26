@@ -1,0 +1,24 @@
+{
+  "name": "exclusv",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Exclusv-developers/Exclusv.git"
+  },
+  "author": "Exclusv",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Exclusv-developers/Exclusv/issues"
+  },
+  "homepage": "https://github.com/Exclusv-developers/Exclusv#readme",
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "mongoose": "^6.7.3"
+  }
+}
