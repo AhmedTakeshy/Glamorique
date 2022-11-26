@@ -7,14 +7,14 @@ import methodOverride from "method-override";
 const app = express();
 
 app.set("view engine", "ejs");
-app.set("views", path.join(__dirname, "views"));
+app.set("views", path.dirname("views"));
 
-app.use(express.static(path.join(__dirname, "public")));
+// app.use(express.static(path.join(__dirname, "public")));
 app.use(urlencoded({ extended: true }));
 app.use(express.static("public"));
 app.use(methodOverride("_method"));
 
-connect("mongodb://localhost:27017/exclusv", {});
+mongoose.connect("mongodb://localhost:27017/exclusv", {});
 
 const db = mongoose.connection;
 
