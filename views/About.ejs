@@ -1,336 +1,209 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="https://kit.fontawesome.com/3947340de5.js"
-            crossorigin="anonymous"></script>
-        <!-- Bootstrap -->
-        <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-            crossorigin="anonymous" />
-        <link rel="stylesheet" href="./css/About.css">
-        <link rel="stylesheet" href="./css/Home.css" />
-        <title>About</title>
-    </head>
-    <body>
-        <header class="header d-none d-lg-flex align-items-center p-3 justify-content-between">
-            <nav class="nav d-flex justify-content-between">
-                <a class="nav-link active text-white p-0 me-4" aria-current="page" href="#">Shipping</a>
-                <a class="nav-link text-white p-0 me-4" href="#">FAQ</a>
-                <a class="nav-link text-white p-0 me-4" href="#">Return Policy</a>
-                <a class="nav-link text-white p-0" href="#">Track Order</a>
-            </nav>
-            <nav class="nav nav-middle">
-                <a class="nav-link text-white p-0 text-uppercase" href="#">free shipping world wide</a>
-            </nav>
-            <nav class="nav d-flex justify-content-between nav-left">
-                <a class="nav-link active text-white p-0 me-4" href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                <a class="nav-link text-white p-0 me-4" href="#"><i class="fa-brands fa-twitter"></i></a>
-                <a class="nav-link text-white p-0 me-4" href="#"><i class="fa-brands fa-instagram"></i></a>
-                <a class="nav-link text-white p-0 me-4" href="#"><i class="fa-brands fa-pinterest"></i></a>
-                <a class="nav-link text-white p-0 me-4 position-relative" href="#">English <i
-                        class="fa-solid fa-chevron-down ps-1"></i>
-                    <ul class="list-unstyled bg-white text-dark">
-                        <li>Deutsch</li>
-                        <hr class="my-1" />
-                        <li>Italian</li>
+<%- include("./partials/header.ejs") %>
+    <!-- Landing start -->
+    <section class="landing position-relative mb-3">
+        <%- include("./partials/navbar.ejs") %>
+    </section>
+    <!-- start side menu -->
+    <div class="side_menu col-lg-6 col-sm-12 col-md-12">
+        <div class="container">
+            <div class="side_content d-flex aling-items-center justify-content-center flex-column ">
+                <div class="header_slider">
+                    <ul class="list_menu">
+                        <li data-type="women" class="Header_linke active"><a href="women">women</a></li>
+                        <li data-type="men" class="Header_linke "><a href="men">men</a></li>
+                        <li data-type="kids" class="Header_linke "><a href="kids">kids</a></li>
                     </ul>
-                </a>
-                <a class="nav-link text-white p-0 me-1 position-relative" href="#">USD,$ <i
-                        class="fa-solid fa-chevron-down ps-1"></i>
-                    <ul class="list-unstyled bg-white text-dark">
-                        <li>USD,$</li>
-                        <hr class="my-1" />
-                        <li>EUR, €</li>
-                    </ul>
-                </a>
-            </nav>
-        </header>
-        <section class="landing position-relative mb-3">
-            <div class="container-fluid d-flex position-absolute justify-content-between align-items-center">
-                <div class="menu-icon d-flex justify-content-start align-items-center flex-wrap">
-                    <span></span>
-                    <span></span>
                 </div>
-                <ul class="nav nav-tabs d-none d-lg-flex">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-uppercase" data-bs-toggle="dropdown" href="index.html" role="button"
-                            aria-expanded="false">Home</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Home 1</a></li>
-                            <li><a class="dropdown-item" href="#">Home 2</a></li>
-                            <li><a class="dropdown-item" href="#">Home 3</a></li>
-                            <li><a class="dropdown-item" href="#">Home 4</a></li>
-                            <li><a class="dropdown-item" href="#">Home 5</a></li>
-                            <li><a class="dropdown-item" href="#">Home 4</a></li>
-                            <li><a class="dropdown-item" href="#">Home 5</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-uppercase" data-bs-toggle="dropdown" href="#" role="button"
-                            aria-expanded="false">shop</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Home 1</a></li>
-                            <li><a class="dropdown-item" href="#">Home 2</a></li>
-                            <li><a class="dropdown-item" href="#">Home 3</a></li>
-                            <li><a class="dropdown-item" href="#">Home 4</a></li>
-                            <li><a class="dropdown-item" href="#">Home 5</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-uppercase" data-bs-toggle="dropdown" href="#" role="button"
-                            aria-expanded="false">blog</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Home 1</a></li>
-                            <li><a class="dropdown-item" href="#">Home 2</a></li>
-                            <li><a class="dropdown-item" href="#">Home 3</a></li>
-                            <li><a class="dropdown-item" href="#">Home 4</a></li>
-                            <li><a class="dropdown-item" href="#">Home 5</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-uppercase" data-bs-toggle="dropdown" href="#" role="button"
-                            aria-expanded="false">pages</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Home 1</a></li>
-                            <li><a class="dropdown-item" href="#">Home 2</a></li>
-                            <li><a class="dropdown-item" href="#">Home 3</a></li>
-                            <li><a class="dropdown-item" href="#">Home 4</a></li>
-                            <li><a class="dropdown-item" href="#">Home 5</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item text-uppercase">
-                        <a class="nav-link" href="About.html">About</a>
-                    </li>
-                    <li class="nav-item text-uppercase">
-                        <a class="nav-link" href="#">Contact</a>
-                    </li>
-                </ul>
-                <div class="head-title align-items-center d-flex">
-                    <h1 class="pe-3 mb-0">Exclusv</h1>
-                    <div></div>
-                </div>
-                <ul class="icons list-unstyled justify-content-end mb-0 d-none d-lg-flex">
-                    <li><i class="fa-solid fa-magnifying-glass"></i></li>
-                    <li><i class="fa-solid fa-user"></i></li>
-                    <li><i class="fa-regular fa-heart"></i></li>
-                    <li><i class="fa-solid fa-bag-shopping"></i></li>
-                </ul>
-                <a href="#" class="text-decoration-none fs-4 d-flex d-lg-none text-dark"><i
-                        class="fa-solid fa-bag-shopping"></i></a>
-            </div>
-         
-        </section>
-        <!-- start side menu -->
-        <div class="side_menu col-lg-6 col-sm-12 col-md-12">
-            <div class="container">
-                <div class="side_content d-flex aling-items-center justify-content-center flex-column ">
-                    <div class="header_slider">
-                        <ul class="list_menu">
-                            <li data-type="women" class="Header_linke active">women</li>
-                            <li data-type="men" class="Header_linke ">men</li>
-                            <li data-type="kids" class="Header_linke ">kids</li>
+                <div class="body_side_content d-flex  justify-content-between col-12">
+                    <div class="links col-lg-6 col-md-4 col-sm-6 ">
+                        <ul class="sections_linkes ">
+                            <li class="Link_Section active" data-name="women">ACCESSORIES</li>
+                            <li class="Link_Section active" data-name="women">WOMEN</li>
+                            <li class="Link_Section active" data-name="women">KIDS</li>
+                            <li class="Link_Section active" data-name="women">HOME</li>
+                            <li class="Link_Section active" data-name="women">COLLECTION</li>
+                            <li class="Link_Section active" data-name="women">SALE UP TO 50% OFF</li>
+                            <li class="Link_Section active" data-name="women">JEANS</li>
+                            <li class="Link_Section active" data-name="women">DRESSES</li>
+                            <li class="Link_Section active" data-name="women">SHOES</li>
+                            <li class="Link_Section active" data-name="women">JOIN LIFE</li>
+                            <li class="Link_Section" data-name="men">ACCESSORIES</li>
+                            <li class="Link_Section" data-name="men">JOIN LIFE</li>
+                            <li data-name="men">T-SHIRTS & TOPS</li>
+                            <li class="Link_Section" data-name="men">GIFT CARD</li>
+                            <li class="Link_Section" data-name="men">JACKETS & COATS</li>
+                            <li class="Link_Section" data-name="men">BEST SELLERS</li>
+                            <li class="Link_Section" data-name="men">COLLECTION</li>
+                            <li class="Link_Section" data-name="men">SALE UP TO 50% OFF</li>
+                            <li class="Link_Section" data-name="men">#UOMOSTYLE</li>
+                            <li class="Link_Section" data-name="kids">MAN</li>
+                            <li class="Link_Section" data-name="kids">WOMEN</li>
+                            <li class="Link_Section" data-name="kids">COLLECTION</li>
+                            <li class="Link_Section" data-name="kids">SALE UP TO 50% OFF</li>
+                            <li class="Link_Section" data-name="kids">ACCESSORIES</li>
+                            <li class="Link_Section" data-name="kids">JOIN LIFE</li>
+                            <li class="Link_Section" data-name="kids">T-SHIRTS & TOPS</li>
+                            <li class="Link_Section" data-name="kids">JEANS</li>
+                            <li class="Link_Section" data-name="kids">BEST SELLERS</li>
+                            <li class="Link_Section" data-name="kids">DRESSES</li>
                         </ul>
                     </div>
-                    <div class="body_side_content d-flex  justify-content-between col-12">
-                        <div class="links col-lg-6 col-md-4 col-sm-6 ">
-                            <ul class="sections_linkes ">
-                                <li class="Link_Section active" data-name="women">ACCESSORIES</li>
-                                <li class="Link_Section active" data-name="women">WOMEN</li>
-                                <li class="Link_Section active" data-name="women">KIDS</li>
-                                <li class="Link_Section active" data-name="women">HOME</li>
-                                <li class="Link_Section active" data-name="women">COLLECTION</li>
-                                <li class="Link_Section active" data-name="women">SALE UP TO 50% OFF</li>
-                                <li class="Link_Section active" data-name="women">JEANS</li>
-                                <li class="Link_Section active" data-name="women">DRESSES</li>
-                                <li class="Link_Section active" data-name="women">SHOES</li>
-                                <li class="Link_Section active" data-name="women">JOIN LIFE</li>
-                                <li class="Link_Section" data-name="men">ACCESSORIES</li>
-                                <li class="Link_Section" data-name="men">JOIN LIFE</li>
-                                <li data-name="men">T-SHIRTS & TOPS</li>
-                                <li class="Link_Section" data-name="men">GIFT CARD</li>
-                                <li class="Link_Section" data-name="men">JACKETS & COATS</li>
-                                <li class="Link_Section" data-name="men">BEST SELLERS</li>
-                                <li class="Link_Section" data-name="men">COLLECTION</li>
-                                <li class="Link_Section" data-name="men">SALE UP TO 50% OFF</li>
-                                <li class="Link_Section" data-name="men">#UOMOSTYLE</li>
-                                <li class="Link_Section" data-name="kids">MAN</li>
-                                <li class="Link_Section" data-name="kids">WOMEN</li>
-                                <li class="Link_Section" data-name="kids">COLLECTION</li>
-                                <li class="Link_Section" data-name="kids">SALE UP TO 50% OFF</li>
-                                <li class="Link_Section" data-name="kids">ACCESSORIES</li>
-                                <li class="Link_Section" data-name="kids">JOIN LIFE</li>
-                                <li class="Link_Section" data-name="kids">T-SHIRTS & TOPS</li>
-                                <li class="Link_Section" data-name="kids">JEANS</li>
-                                <li class="Link_Section" data-name="kids">BEST SELLERS</li>
-                                <li class="Link_Section" data-name="kids">DRESSES</li>
-                            </ul>
-                        </div>
-                        <div class="img_slider col-lg-6 col-md-4 col-sm-auto">
-                            <img src="images/side_menu/tab_women.jpg" alt="" class="image_section active" data-img="women">
-                            <img src="images/side_menu/3.jpg" alt="" class="image_section" data-img="men">
-                            <img src="images/side_menu/2.jpg" alt="" class="image_section" data-img="kids">
-                        </div>
+                    <div class="img_slider col-lg-6 col-md-4 col-sm-auto">
+                        <img src="images/side_menu/tab_women.jpg" alt="" class="image_section active" data-img="women">
+                        <img src="images/side_menu/3.jpg" alt="" class="image_section" data-img="men">
+                        <img src="images/side_menu/2.jpg" alt="" class="image_section" data-img="kids">
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- end side menu -->
-        <!-- start TagName section -->
-        <div class="TagName col-12">
-            <div class="container">
-                <h2 class="Tag_name_content text-uppercase col-12 d-flex
+    <!-- end side menu -->
+    <!-- start TagName section -->
+    <div class="TagName col-12">
+        <div class="container">
+            <h2 class="Tag_name_content text-uppercase col-12 d-flex
                     align-content-center">About us</h2>
-            </div>
-            <div class="banner_about col-12">
-            </div>
         </div>
-        <!-- end header section -->
-        <!-- start out story -->
-        <div class="our_discription_section">
-            <div class="container">
-                <div class="our_story d-flex align-items-center
+        <div class="banner_about col-12">
+        </div>
+    </div>
+    <!-- end header section -->
+    <!-- start out story -->
+    <div class="our_discription_section">
+        <div class="container">
+            <div class="our_story d-flex align-items-center
                     justify-content-start flex-column">
-                    <h4 class=" titel col-12 d-flex align-items-center
+                <h4 class=" titel col-12 d-flex align-items-center
                         justify-content-start text-uppercase fw-bolder fs-2k">OUR
-                        STORY</h4>
-                    <p class="discription-our-story_bold fw-bold col-12 ">
-                        Duis aute irure dolor in reprehenderit in voluptate
-                        velit esse cillum dolore eu fugiat nulla pariatur.
-                        Excepteur sint
-                        occaecat cupidatat non proident, sunt in culpa qui
-                        officia deserunt mollit anim id est laborum.
-                    </p>
-                    <p class="discription-our-story_thin col-12">
-                        Saw wherein fruitful good days image them, midst, waters
-                        upon, saw. Seas lights seasons. Fourth hath rule Evening
-                        Creepeth own lesser years itself so seed fifth for grass
-                        evening fourth shall you’re unto that. Had. Female
-                        replenish
-                        for yielding so saw all one to yielding grass you’ll air
-                        sea it, open waters subdue, hath. Brought second Made.
-                        Be.
-                        Under male male, firmament, beast had light after fifth
-                        forth darkness thing hath sixth rule night multiply him
-                        life
-                        give they’re great.
-                    </p>
-                </div>
-                <div class="our_Mission d-flex align-items-center
+                    STORY</h4>
+                <p class="discription-our-story_bold fw-bold col-12 ">
+                    Duis aute irure dolor in reprehenderit in voluptate
+                    velit esse cillum dolore eu fugiat nulla pariatur.
+                    Excepteur sint
+                    occaecat cupidatat non proident, sunt in culpa qui
+                    officia deserunt mollit anim id est laborum.
+                </p>
+                <p class="discription-our-story_thin col-12">
+                    Saw wherein fruitful good days image them, midst, waters
+                    upon, saw. Seas lights seasons. Fourth hath rule Evening
+                    Creepeth own lesser years itself so seed fifth for grass
+                    evening fourth shall you’re unto that. Had. Female
+                    replenish
+                    for yielding so saw all one to yielding grass you’ll air
+                    sea it, open waters subdue, hath. Brought second Made.
+                    Be.
+                    Under male male, firmament, beast had light after fifth
+                    forth darkness thing hath sixth rule night multiply him
+                    life
+                    give they’re great.
+                </p>
+            </div>
+            <div class="our_Mission d-flex align-items-center
                     justify-content-start flex-column">
-                    <h4 class=" titel col-12 d-flex align-items-center
+                <h4 class=" titel col-12 d-flex align-items-center
                         justify-content-start text-uppercase fw-bolder fs-5">Our
-                        Mission</h4>
-                    <p class="discription-our-Mission_thin col-12">
-                        Excepteur sint occaecat cupidatat non proident, sunt in
-                        culpa qui officia deserunt mollit anim id est laborum.
-                        Sed ut
-                        perspiciatis unde omnis iste natus error sit voluptatem
-                        accusantium doloremque laudantium, totam rem aperiam,
-                        eaque ipsa
-                        quae ab illo inventore veritatis et quasi architecto
-                        beatae vitae dicta sunt explicabo.
-                    </p>
-                </div>
-                <div class="our_Mission d-flex align-items-center
+                    Mission</h4>
+                <p class="discription-our-Mission_thin col-12">
+                    Excepteur sint occaecat cupidatat non proident, sunt in
+                    culpa qui officia deserunt mollit anim id est laborum.
+                    Sed ut
+                    perspiciatis unde omnis iste natus error sit voluptatem
+                    accusantium doloremque laudantium, totam rem aperiam,
+                    eaque ipsa
+                    quae ab illo inventore veritatis et quasi architecto
+                    beatae vitae dicta sunt explicabo.
+                </p>
+            </div>
+            <div class="our_Mission d-flex align-items-center
                     justify-content-start flex-column">
-                    <h4 class=" titel col-12 d-flex align-items-center
+                <h4 class=" titel col-12 d-flex align-items-center
                         justify-content-start text-uppercase fw-bolder fs-5">Our
-                        Vision</h4>
-                    <p class="discription-our-Mission_thin col-12">
-                        Excepteur sint occaecat cupidatat non proident, sunt in
-                        culpa qui officia deserunt mollit anim id est laborum.
-                        Sed ut
-                        perspiciatis unde omnis iste natus error sit voluptatem
-                        accusantium doloremque laudantium, totam rem aperiam,
-                        eaque ipsa
-                        quae ab illo inventore veritatis et quasi architecto
-                        beatae vitae dicta sunt explicabo.
-                    </p>
-                </div>
+                    Vision</h4>
+                <p class="discription-our-Mission_thin col-12">
+                    Excepteur sint occaecat cupidatat non proident, sunt in
+                    culpa qui officia deserunt mollit anim id est laborum.
+                    Sed ut
+                    perspiciatis unde omnis iste natus error sit voluptatem
+                    accusantium doloremque laudantium, totam rem aperiam,
+                    eaque ipsa
+                    quae ab illo inventore veritatis et quasi architecto
+                    beatae vitae dicta sunt explicabo.
+                </p>
             </div>
         </div>
-        <!-- end out story -->
-        <!-- start Company Partners -->
-        <div class="brand_section col-12  ">
-            
-            <div class="container">
-                <h5 class=" Partners col-12 fw-bold ">Company Partners</h5>
-                <div class="brand_contant col-12">
-                    <ul class="list_brand col-12 d-flex align-content-center justify-content-between">
-                        <li class="col-lg-2 col-md-3 col-sm-6">
-                            <img src="images/brand/mongo.png" alt="mongo">
-                        </li>
-                        <li class="col-lg-2 col-md-3 col-sm-6">
-                            <img src="images/brand/osos.png" alt="osos">
-                        </li>
-                        <li class="col-lg-2 col-md-3 col-sm-6">
-                            <img src="images/brand/reebok.png" alt="reebok">
-                        </li>
-                        <li class="col-lg-2 col-md-3 col-sm-6">
-                            <img src="images/brand/zara.png" alt="zara">
-                        </li>
-                        <li class="col-lg-2 col-md-3 col-sm-6">
-                            <img src="images/brand/adidas.png" alt="zara">
-                        </li>
-                        <li class="col-lg-2 col-md-3 col-sm-6">
-                            <img src="images/brand/star.png" alt="zara">
-                        </li>
-                    </ul>
-                </div>
+    </div>
+    <!-- end out story -->
+    <!-- start Company Partners -->
+    <div class="brand_section col-12  ">
+
+        <div class="container">
+            <h5 class=" Partners col-12 fw-bold ">Company Partners</h5>
+            <div class="brand_contant col-12">
+                <ul class="list_brand col-12 d-flex align-content-center justify-content-between">
+                    <li class="col-lg-2 col-md-3 col-sm-6">
+                        <img src="images/brand/mongo.png" alt="mongo">
+                    </li>
+                    <li class="col-lg-2 col-md-3 col-sm-6">
+                        <img src="images/brand/osos.png" alt="osos">
+                    </li>
+                    <li class="col-lg-2 col-md-3 col-sm-6">
+                        <img src="images/brand/reebok.png" alt="reebok">
+                    </li>
+                    <li class="col-lg-2 col-md-3 col-sm-6">
+                        <img src="images/brand/zara.png" alt="zara">
+                    </li>
+                    <li class="col-lg-2 col-md-3 col-sm-6">
+                        <img src="images/brand/adidas.png" alt="zara">
+                    </li>
+                    <li class="col-lg-2 col-md-3 col-sm-6">
+                        <img src="images/brand/star.png" alt="zara">
+                    </li>
+                </ul>
             </div>
         </div>
-        <!-- end Company Partners  -->
-        <!-- start our team -->
-        <div class="our-team col-12">
-            <div class="container">
-                <h2 class="our_team_title col-12 text-uppercase fw-3">ourteam</h2>
-                <div class="our-team-content col-12">
-                    <div class="member one col-12 d-flex justify-content-center
+    </div>
+    <!-- end Company Partners  -->
+    <!-- start our team -->
+    <div class="our-team col-12">
+        <div class="container">
+            <h2 class="our_team_title col-12 text-uppercase fw-3">ourteam</h2>
+            <div class="our-team-content col-12">
+                <div class="member one col-12 d-flex justify-content-center
                         ">
-                        <div class="discription-member col-lg-6 col-xs-12 d-flex
+                    <div class="discription-member col-lg-6 col-xs-12 d-flex
                             align-items-center justify-content-between
                             flex-column">
-                            <h3 class="member_name ">Ahmed forntend</h3>
-                            <h6 class="work-title">forntend developer</h6>
-                            <p class="dis ">Front-end developers use HTML, CSS,
-                                and JavaScript to build the client side of a
-                                website. They are responsible for
-                                building the visual elements on a page, such as
-                                the layout, buttons, menus, forms, and other
-                                features that users will
-                                see and interact with when they visit a webpage.
-                            </p>
-                            <div class="contact d-flex align-items-center
+                        <h3 class="member_name ">Ahmed forntend</h3>
+                        <h6 class="work-title">forntend developer</h6>
+                        <p class="dis ">Front-end developers use HTML, CSS,
+                            and JavaScript to build the client side of a
+                            website. They are responsible for
+                            building the visual elements on a page, such as
+                            the layout, buttons, menus, forms, and other
+                            features that users will
+                            see and interact with when they visit a webpage.
+                        </p>
+                        <div class="contact d-flex align-items-center
                                 justify-content-center">
-                                <ul class="contact-way d-flex align-items-center
+                            <ul class="contact-way d-flex align-items-center
                                     justify-content-center">
-                                    <li class="ms-5"><a href=""><i
-                                                class="fa-brands fa-facebook"></i></a></li>
-                                    <li class="ms-5"><a href=""><i
-                                                class="fa-brands fa-instagram"></i></a></li>
-                                    <li class="ms-5"><a href=""><i
-                                                class="fa-brands fa-linkedin"></i></a></li>
-                                    <li class="ms-5"><a href=""><i class="fa-brands fa-youtube"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="photo-member col-lg-6 col-xs-12">
-                            <img src="./images/about_us/member/ahmed.jpg"
-                                alt="">
+                                <li class="ms-5"><a href=""><i class="fa-brands fa-facebook"></i></a></li>
+                                <li class="ms-5"><a href=""><i class="fa-brands fa-instagram"></i></a></li>
+                                <li class="ms-5"><a href=""><i class="fa-brands fa-linkedin"></i></a></li>
+                                <li class="ms-5"><a href=""><i class="fa-brands fa-youtube"></i></a></li>
+                            </ul>
                         </div>
                     </div>
-                    <div class="member two col-12 d-flex align-items-center
+                    <div class="photo-member col-lg-6 col-xs-12">
+                        <img src="./images/about_us/member/ahmed.jpg" alt="">
+                    </div>
+                </div>
+                <div class="member two col-12 d-flex align-items-center
                         justify-content-between mb-5">
-                        <div class="photo-member col-lg-6 col-xs-12">
-                            <img src="./images/about_us/member/mahmoud.png"
-                                alt="">
-                        </div>
+                    <div class="photo-member col-lg-6 col-xs-12">
+                        <img src="./images/about_us/member/mahmoud.png" alt="">
+                    </div>
                     <div class="discription-member col-lg-6 col-xs-12 d-flex
                                                 align-items-center justify-content-between
                                                 flex-column">
@@ -355,15 +228,9 @@
                             </ul>
                         </div>
                     </div>
-                    </div>
                 </div>
             </div>
         </div>
-        <!-- end our team -->
-        <script
-            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-            crossorigin="anonymous"></script>
-            <script src="js/main.js"></script>
-    </body>
-</html>
+    </div>
+    <!-- end our team -->
+    <%- include("./partials/footer.ejs") %>

@@ -17,6 +17,10 @@ app.get("/", (req, res) => {
   res.render("Home");
 });
 
+app.get("/about", (req, res) => {
+  res.render("About");
+});
+
 app.listen(3000, () => {
   console.log("Connection up and running");
 });
