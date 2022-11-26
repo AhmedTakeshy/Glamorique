@@ -1,9 +1,7 @@
 import mongoose from "mongoose";
-const { Schema } = mongoose;
-import { v4 as uuid } from "uuid";
+const Schema = mongoose.Schema;
 
 const ProductSchema = new Schema({
-  id: uuid(),
   type: String,
   BrandName: String,
   productName: String,
@@ -21,4 +19,4 @@ const ProductSchema = new Schema({
   FabricType: String,
 });
 
-module.exports = mongoose.model("Product", ProductSchema);
+export default mongoose.model("Product", ProductSchema);
