@@ -1,0 +1,62 @@
+:root {
+  --red-color: #c32929;
+  --black-color: #222222;
+  --dark-grey-color: #353535;
+  --light-grey-color: #787272;
+  --gold-color: #b9a16b;
+  --small-font: 0.8rem;
+  --medium-font: 1rem;
+  --big-font: 2rem;
+  --bg-footer: #222222;
+  --input-footer: #353535;
+  --button-footer: #5c5c5c;
+  --line-footer: #434343;
+  --text-footer: #fff;
+}
+
+a {
+  text-decoration: none;
+}
+
+.women-banner {
+  margin-top: 6rem;
+}
+
+.women-banner img {
+  width: 100%;
+  height: 30rem;
+  object-fit: cover;
+}
+
+.main ul {
+  border-bottom: 1px solid rgba(57, 76, 96, 0.15);
+}
+
+.main ul li {
+  line-height: 1.6;
+  padding: 0.5rem;
+}
+.main ul li:last-child {
+  margin-bottom: 0.25rem;
+}
+
+.main ul li:hover {
+  background-color: rgba(64, 87, 109, 0.07);
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.main ul li a {
+  color: var(--bg-footer);
+}
+
+.filter {
+  border-bottom: 1px solid rgba(57, 76, 96, 0.15);
+}
+.filter h4 {
+  color: var(--bg-footer);
+  margin: 0.75rem 0;
+}
