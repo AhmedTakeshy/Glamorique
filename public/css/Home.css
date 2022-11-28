@@ -714,6 +714,11 @@ del {
   text-transform: capitalize;
   margin-top: -10px;
 }
+@media (max-width:767px) {
+  .discrption_news{
+    margin-top: 20px;
+  }
+}
 
 /* end last news */
 /* start brand section  */
@@ -736,7 +741,7 @@ del {
   transform: scale(1.1);
 }
 
-@media (max-width: 530px) {
+@media (max-width: 767px) {
   .list_brand {
     flex-direction: column;
   }
@@ -751,6 +756,7 @@ del {
     margin-bottom: 50px;
   }
 }
+
 
 /* end brand section  */
 
