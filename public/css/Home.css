@@ -714,7 +714,7 @@ del {
   font-size: 17px;
   font-family: "Times New Roman", Times, serif;
   text-transform: capitalize;
-  margin-top: -10px;
+
 }
 @media (max-width:767px) {
   .discrption_news{
