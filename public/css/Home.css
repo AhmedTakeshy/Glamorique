@@ -672,6 +672,11 @@ del {
   width: 350px;
   height: 600px;
 }
+@media (max-width:767px) {
+  .swiper-slide{
+    width: 100%;
+  }
+}
 
 .photo_news {
   width: 100%;
@@ -716,11 +721,7 @@ del {
   text-transform: capitalize;
 
 }
-@media (max-width:767px) {
-  .discrption_news{
-    margin-top: 20px;
-  }
-}
+
 
 /* end last news */
 /* start brand section  */
