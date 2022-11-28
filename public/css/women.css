@@ -18,8 +18,10 @@ a {
   text-decoration: none;
 }
 
-.women-banner {
-  margin-top: 6rem;
+@media (min-width: 992px) {
+  .women-banner {
+    margin-top: 6rem;
+  }
 }
 
 .women-banner img {
@@ -28,16 +30,15 @@ a {
   object-fit: cover;
 }
 
-.main ul {
-  border-bottom: 1px solid rgba(57, 76, 96, 0.15);
+hr {
+  color: rgba(57, 76, 96);
+  height: 1px;
+  margin: 0.5rem 0;
 }
 
 .main ul li {
   line-height: 1.6;
   padding: 0.5rem;
-}
-.main ul li:last-child {
-  margin-bottom: 0.25rem;
 }
 
 .main ul li:hover {
@@ -53,10 +54,15 @@ a {
   color: var(--bg-footer);
 }
 
-.filter {
-  border-bottom: 1px solid rgba(57, 76, 96, 0.15);
-}
 .filter h4 {
   color: var(--bg-footer);
-  margin: 0.75rem 0;
+}
+
+.list:hover {
+  background-color: rgba(64, 87, 109, 0.07);
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
 }
