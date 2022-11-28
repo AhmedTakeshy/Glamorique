@@ -673,8 +673,8 @@ del {
   height: 600px;
 }
 @media (max-width:767px) {
-  .swiper-slide{
-    width: 100%;
+  .last_news_content .swiper-slide{
+    width: 100% !important;
   }
 }
 
