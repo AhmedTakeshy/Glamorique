@@ -21,10 +21,12 @@ html {
 body {
   font-family: "Jost", sans-serif;
 }
+
 ul {
   list-style: none;
   padding: 0;
 }
+
 a {
   text-decoration: none;
 }
@@ -89,6 +91,7 @@ a {
   top: 1rem;
   left: 0;
   z-index: 2;
+  height: 60px;
 }
 
 @media (max-width: 992px) {
@@ -215,6 +218,7 @@ a {
     height: auto !important;
     flex-direction: column !important;
   }
+
   .tag_sections {
     margin-top: 70px;
     width: 100%;
@@ -652,19 +656,28 @@ del {
   width: 100%;
   height: 500px;
 }
+
 .news_container {
   height: 370px;
   padding: 0;
   margin: 0;
 }
+
 .last_news_content {
   width: 100%;
   height: 100%;
 }
+
 .last_news_content .swiper-slide {
   width: 350px;
   height: 600px;
 }
+@media (max-width:767px) {
+  .last_news_content .swiper-slide{
+    width: 100% !important;
+  }
+}
+
 .photo_news {
   width: 100%;
   height: 400px;
@@ -673,34 +686,43 @@ del {
   background-position: center;
   background-repeat: no-repeat;
 }
+
 .photo_news.one {
   background-image: url(".././images/lastnews/236-p882j9fg38vqvi7a5karxqcihnxnxeeoyz2q004qpk.jpg");
 }
+
 .photo_news.two {
   background-image: url(".././images/lastnews/2.jpg");
 }
+
 .photo_news.three {
   background-image: url(".././images/lastnews/3.jpg");
 }
+
 .photo_news.four {
   background-image: url(".././images/lastnews/4.jpg");
 }
+
 .icons_control {
   list-style: none;
   width: 100%;
   margin-top: -10px;
 }
+
 .icons_control li {
   padding-right: 19px;
   font-size: 14px;
   color: #777;
 }
+
 .discrption_news {
   font-size: 17px;
   font-family: "Times New Roman", Times, serif;
   text-transform: capitalize;
-  margin-top: -10px;
+
 }
+
+
 /* end last news */
 /* start brand section  */
 .brand_section {
@@ -708,6 +730,7 @@ del {
   height: 200px;
   width: 100%;
 }
+
 .list_brand {
   list-style: none;
 }
@@ -716,10 +739,12 @@ del {
   cursor: pointer;
   overflow: hidden;
 }
+
 .list_brand li:hover {
   transform: scale(1.1);
 }
-@media (max-width: 530px) {
+
+@media (max-width: 767px) {
   .list_brand {
     flex-direction: column;
   }
@@ -735,6 +760,7 @@ del {
   }
 }
 
+
 /* end brand section  */
 
 /*start  media query */
@@ -742,12 +768,15 @@ del {
   .swiper {
     width: 100%;
   }
+
   .swiper-slide {
     width: 100%;
   }
+
   .product_content {
     width: 100%;
   }
+
   .Big_banner {
     max-width: 100%;
     background-position-x: inherit;
@@ -755,6 +784,7 @@ del {
     height: 200px;
     margin-top: -20px;
   }
+
   .NEW_SEASON {
     width: 100%;
     font-size: 30px;
@@ -762,11 +792,13 @@ del {
     align-items: center;
     justify-content: center;
   }
+
   .sections_best {
     max-width: 100%;
     overflow: hidden;
     padding: 0px 10px;
   }
+
   .sections_best li {
     font-size: 14px;
     font-weight: 900;
@@ -775,6 +807,9 @@ del {
     align-items: center;
     justify-content: center;
     padding: 0;
+    margin: 0;
+  }
+  .category_content{
     margin: 0;
   }
 }
@@ -787,9 +822,11 @@ footer {
   font-size: 14px;
   color: var(--text-footer);
 }
+
 .footer-top h5 {
   font-size: 18px;
 }
+
 .footer-top input {
   color: #e4e4e4;
   background-color: var(--input-footer);
@@ -798,6 +835,7 @@ footer {
   padding: 15px 20px;
   width: 80%;
 }
+
 .footer-top button {
   padding: 15px 40px;
   margin-left: 20px;
@@ -805,6 +843,7 @@ footer {
   border-color: var(--button-footer);
   color: var(--text-footer);
 }
+
 .footer-center ul li a {
   text-decoration: none;
   color: var(--text-footer);
@@ -813,6 +852,7 @@ footer {
   text-transform: capitalize;
   position: relative;
 }
+
 .footer-center ul li a::after {
   content: " ";
   position: absolute;
@@ -823,18 +863,15 @@ footer {
   bottom: -7px;
   transition: all ease-in-out 0.3s;
 }
+
 .footer-center ul li a:hover::after {
   width: 50%;
 }
+
 .footer-line {
   width: 100%;
   background-color: var(--line-footer);
   height: 1px;
-}
-.footer-end button {
-  background: transparent;
-  color: var(--text-footer);
-  border: none;
 }
 
 @media (min-width: 992px) {
@@ -844,3 +881,23 @@ footer {
   }
 }
 /* end footer */
+
+/* backTop start */
+.backTop {
+  position: fixed;
+  bottom: 1.8rem;
+  right: 2rem;
+  padding: 0.25rem 10px;
+  color: white;
+  background-color: var(--red-color);
+  border: none;
+  cursor: pointer;
+  z-index: 999;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  display: none;
+}
+/* backTop end */

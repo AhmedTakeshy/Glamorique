@@ -1,11 +1,12 @@
-import express, { urlencoded } from "express";
+import * as dotenv from "dotenv";
+dotenv.config();
+import express from "express";
 import ejs from "ejs";
 import path from "path";
 import { fileURLToPath } from "url";
-
+import Product from "./models/product.js";
 import mongoose from "mongoose";
 import methodOverride from "method-override";
-import Product from "./models/product.js";
 
 const app = express();
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -34,9 +35,11 @@ app.get("/about", (req, res) => {
   res.render("About");
 });
 
-// app.get("/women", (req, res) => {
-//   res.render("women");
-// });
+app.get("/women", async (req, res) => {
+  const products = await Product.find({});
+
+  res.render("women", { products });
+});
 
 app.all("*", (req, res) => {
   res.render("error");

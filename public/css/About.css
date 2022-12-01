@@ -85,7 +85,7 @@ ul {
 }
 
 .our-team h2 {
-  font-family: var(--font-tag2);
+font-family: var(--font-pargraph2);
   font-size: 70px;
 }
 .member {
