@@ -18,14 +18,14 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 
-mongoose.connect("mongodb://localhost:27017/exclusv", {});
+// mongoose.connect("mongodb://localhost:27017/exclusv", {});
 
-const db = mongoose.connection;
+// const db = mongoose.connection;
 
-db.on("error", console.error.bind(console, "connection error:"));
-db.once("open", () => {
-  console.log("Database connected");
-});
+// db.on("error", console.error.bind(console, "connection error:"));
+// db.once("open", () => {
+//   console.log("Database connected");
+// });
 
 app.get("/", (req, res) => {
   res.render("Home");
@@ -36,9 +36,8 @@ app.get("/about", (req, res) => {
 });
 
 app.get("/women", async (req, res) => {
-  const products = await Product.find({});
-
-  res.render("women", { products });
+  // const products = await Product.find({});
+  res.render("women", );
 });
 
 app.all("*", (req, res) => {
