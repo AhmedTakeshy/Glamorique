@@ -49,7 +49,15 @@ hr {
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
 }
+.card{
+  width: 18rem;
+    height: 430px;
+  
+  }
 
+.card-body{
+  height: 200px;
+}
 .main ul li a {
   color: var(--bg-footer);
 }
@@ -136,16 +144,19 @@ hr {
     justify-content: center;
     margin-right: 10px;
     cursor: pointer;
+   
 }
 .Filtter-price{
   margin-right: 40px;
 }
 .view-price_max,.view-price{
-  width: 20%;
+  width: 30%;
 margin-left: -10px;
-padding: 0px 10px;
   justify-content: left;
   padding: 0px 10px;
+  font-size: 12px;
+    font-weight: 500;
+    background-color: #fdeeeea8;
 }
 .Filter_by label{
 width: 50%;
@@ -157,4 +168,7 @@ width: 50%;
 .Filter_by input{
   width: 50%;
 cursor: pointer;
+}
+#color_picker{
+  width: 100%;
 }

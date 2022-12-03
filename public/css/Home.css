@@ -20,7 +20,9 @@ html {
 
 body {
   font-family: "Jost", sans-serif;
+
 }
+
 
 ul {
   list-style: none;
@@ -29,6 +31,10 @@ ul {
 
 a {
   text-decoration: none;
+  color:#000;
+}
+a:hover{
+  color:inherit
 }
 
 /* header start */
@@ -887,17 +893,21 @@ footer {
   position: fixed;
   bottom: 1.8rem;
   right: 2rem;
-  padding: 0.25rem 10px;
-  color: white;
-  background-color: var(--red-color);
   border: none;
   cursor: pointer;
   z-index: 999;
   border-radius: 50%;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
+background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+color:#fff;
   display: none;
+  
+}
+.backTop svg{
+font-size: 16px;
 }
 /* backTop end */

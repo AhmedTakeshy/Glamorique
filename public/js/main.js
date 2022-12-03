@@ -91,15 +91,26 @@ let lower_value_range = document.getElementById("lower")
 let max_value_range = document.getElementById("max");
 let lower_value_view = document.getElementById("min_value");
 let max_value_view = document.getElementById("max_value");
-max_value_view.innerHTML = "$" + max_value_range.value;
-lower_value_view.innerHTML = "$" + lower_value_range.value;
+max_value_view.innerHTML = "max $" + max_value_range.value;
+lower_value_view.innerHTML = "min $" + lower_value_range.value;
+
 lower_value_range.oninput = function () {
-  lower_value_view.innerHTML = "$" + lower_value_range.value;
+  (lower_value_range.vlaue == max_value_range.value ? lower_value_range.value = max_value_range.value - 100 : "lower_value_range.value")
+  lower_value_view.innerHTML = "min $" + lower_value_range.value;
 }
 max_value_range.oninput = () => {
-  max_value_view.innerHTML = "$" + max_value_range.value;
+  (max_value_range.vlaue == lower_value_range.value ? max_value_range.value = lower_value_range.value + 100 : "max_value_range.value")
+  max_value_view.innerHTML = "max $" + max_value_range.value;
 }
 // ////////////////////end-get-value///////////////////////////////////
+// ////////////////////start-get-color//////////////////////////////////
+let color_Picker = document.getElementById("color_picker");
+color_Picker.oninput = () => {
+  console.log(color_Picker.value)
+}
+
+// ////////////////////start-get-color//////////////////////////////////
+
 
 // ////////////////////start-get-data-atrrbiute--function//////////////
 let check_filter_data = document.querySelectorAll(".check_filter");
