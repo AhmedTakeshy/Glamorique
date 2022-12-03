@@ -58,21 +58,103 @@ hr {
   color: var(--bg-footer);
 }
 
-.list:hover {
+
+.list{
+  height: 50px;
+  overflow: hidden;
+}
+.list.Full-heigt{
+  height: auto !important;
+}
+.Arrow_down{
+  cursor: pointer;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ padding: 20px;
+}
+.Arrow_down svg{
+  font-size: 20px;
+}
+.Header_List{
+  width: 100%;
+  height: 50px;
+  margin: 0;
+}
+.Filter_by{
+  width: 100%;
+ height: auto;
+}
+.Filter_by  .option{
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+  cursor: pointer;
+  box-shadow:1px 0px 0px #ddd,
+    1px -1px 1px #ddd;
+    padding: 20px;
+}
+.Filter_by .option:hover {
   background-color: rgba(64, 87, 109, 0.07);
   border-radius: 5px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
+  cursor: pointer;
 }
-.list{
-  height: 50px;
-  overflow: hidden;
-}
-.Header_List{
+.peice-range{
   width: 100%;
-  height: 50px;
-  margin: 0;
-
+  padding-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.peice-range  input[type='range'] {
+  width: 40%;
+  background-color: rgb(145, 141, 141);
+}
+.peice-range input[type="range"]:nth-child(2){
+  margin-left: -10px;
+}
+.filter_view{
+  width: 100%;
+  margin-top: 10px;
+  height: 60px;
+  display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Filtter-price,.view-price,.view-price_max{
+  width: 30%;
+    height: 40px;
+    background-color: rgb(146, 146, 140)3;
+    color: rgb(10, 10, 10);
+    background-color: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.Filtter-price{
+  margin-right: 40px;
+}
+.view-price_max,.view-price{
+  width: 20%;
+margin-left: -10px;
+padding: 0px 10px;
+  justify-content: left;
+  padding: 0px 10px;
+}
+.Filter_by label{
+width: 50%;
+  font-family: "Jost", sans-serif;
+  /* text-transform: uppercase; */
+  font-size: 18px;
+  font-weight: 500;
+}
+.Filter_by input{
+  width: 50%;
+cursor: pointer;
 }
