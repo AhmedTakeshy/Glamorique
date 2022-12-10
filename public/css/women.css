@@ -69,6 +69,11 @@ hr {
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+  
+}
+.product-card .img-section:hover img{
+  transform:scale(1.1)
 }
 .product-card .img-section img {
   height: 100%;
