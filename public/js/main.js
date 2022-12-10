@@ -113,10 +113,6 @@ color_Picker.oninput = () => {
 
 
 // ////////////////////start-get-data-atrrbiute--function//////////////
-let check_filter_data = document.querySelectorAll(".check_filter");
-check_filter_data.forEach(ele => {
-  console.log(ele)
-})
 
 // ////////////////////end-get-data-atrrbiute--function//////////////
 // /////////////////////start filter section ///////////////////////
