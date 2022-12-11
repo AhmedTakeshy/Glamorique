@@ -115,56 +115,109 @@
                 <hr />
             </div>
             <div class="col-8 col-md-9 d-flex justify-content-center justify-content-lg-between flex-wrap gap-3">
-                <% for (let product of products) {%>
-                    <div class="card mt-3" style="width: 18rem">
-                        <img src=<%=product.images.length ? product.images[0].url
-                            : "https://res.cloudinary.com/dhulz3zfg/image/upload/v1669515382/Exclusv/women_shirt/item2previwe"
-                            %> %> class="card-img-top" alt="..." />
-                        <div class="card-body">
-                            <h5 class="card-title">Brand name: <%= product.brandName %>
-                            </h5>
-                            <h5 class="text-muted">Type: <%= product.type %>
-                            </h5>
-                            <p class="card-text">
-                                <%= product.description %>
-                            </p>
-                            <div class="card-price d-flex justify-content-between align-items-center">
-                                <span class="fs-6 fw-bold">EG <%= product.price %></span>
-                                <button class="btn btn-outline-danger">Add to cart</button>
-                            </div>
-                        </div>
+                <div class="product-card col-3 d-flex flex-column ">
+                    <div class="img-section col-12">
+                        <img src="./images/women/products/2.png" class="card-img-top" alt="..." />
                     </div>
-                    <% } %>
-                        <!-- <div class="card mt-3" style="width: 18rem">
-                    <img src="./images/women/banner.jpg" class="card-img-top" alt="..." />
-                    <div class="card-body">
-                        <h5 class="card-title">Brand name: xyz</h5>
-                        <h5 class="text-muted">Type: shirt</h5>
-                        <p class="card-text">
-                            Some quick example text to build on the card title and make up the
-                            bulk of the card's content.
-                        </p>
-                        <div class="card-price d-flex justify-content-between align-items-center">
-                            <span class="fs-6 fw-bold">EG 500.00</span>
-                            <button class="btn btn-outline-danger">Add to cart</button>
-                        </div>
+                    <div class="description-product">
+                        <h4 class="Brand-name col-12 ps-3">Brand name: xyz</h4>
+                        <h5 class="text-muted col-12 ps-3">Type: shirt</h5>
+                        <p class="details-product col-12 ps-3">Some quick example text to build on the card title and
+                            make up the bulk of the card's content. </p>
+                        <h6 class="product-price col-12 ps-3"><span class="new-price me-4">EG 300</span><del>EG
+                                250</del></h6>
+                    </div>
+                    <div class="BTn-section d-flex align-items-center justify-content-between">
+                        <span class="add-to-cart d-flex col-5 ">Add To cart</span>
+                        <span class="buy-now d-flex col-5">Buy Now</span>
                     </div>
                 </div>
-                <div class="card mt-3" style="width: 18rem">
-                    <img src="./images/women/banner.jpg" class="card-img-top" alt="..." />
-                    <div class="card-body">
-                        <h5 class="card-title">Brand name: xyz</h5>
-                        <h5 class="text-muted">Type: shirt</h5>
-                        <p class="card-text">
-                            Some quick example text to build on the card title and make up the
-                            bulk of the card's content.
-                        </p>
-                        <div class="card-price d-flex justify-content-between align-items-center">
-                            <span class="fs-6 fw-bold">EG 500.00</span>
-                            <button class="btn btn-outline-danger">Add to cart</button>
-                        </div>
+                <div class="product-card col-3 d-flex flex-column ">
+                    <div class="img-section col-12">
+                        <img src="./images/women/products/6.jfif" class="card-img-top" alt="..." />
                     </div>
-                </div> -->
+                    <div class="description-product">
+                        <h4 class="Brand-name col-12 ps-3">Brand name: xyz</h4>
+                        <h5 class="text-muted col-12 ps-3">Type: shirt</h5>
+                        <p class="details-product col-12 ps-3">Some quick example text to build on the card title and
+                            make up the bulk of the card's content. </p>
+                        <h6 class="product-price col-12 ps-3"><span class="new-price me-4">EG 300</span><del>EG
+                                250</del></h6>
+                    </div>
+                    <div class="BTn-section d-flex align-items-center justify-content-between">
+                        <span class="add-to-cart d-flex col-5 ">Add To cart</span>
+                        <span class="buy-now d-flex col-5">Buy Now</span>
+                    </div>
+                </div>
+                <div class="product-card col-3 d-flex flex-column ">
+                    <div class="img-section col-12">
+                        <img src="./images/women/products/4.jfif" class="card-img-top" alt="..." />
+                    </div>
+                    <div class="description-product">
+                        <h4 class="Brand-name col-12 ps-3">Gucci</h4>
+                        <h5 class="text-muted col-12 ps-3">Type: shirt</h5>
+                        <p class="details-product col-12 ps-3">Some quick example text to build on the card title and
+                            make up the bulk of the card's content. </p>
+                        <h6 class="product-price col-12 ps-3"><span class="new-price me-4">EG 300</span><del>EG
+                                250</del></h6>
+                    </div>
+                    <div class="BTn-section d-flex align-items-center justify-content-between">
+                        <span class="add-to-cart d-flex col-5 ">Add To cart</span>
+                        <span class="buy-now d-flex col-5">Buy Now</span>
+                    </div>
+                </div>
+                <div class="product-card col-3 d-flex flex-column ">
+                    <div class="img-section col-12">
+                        <img src="./images/women/products/8.jfif" class="card-img-top" alt="..." />
+                    </div>
+                    <div class="description-product">
+                        <h4 class="Brand-name col-12 ps-3">zara</h4>
+                        <h5 class="text-muted col-12 ps-3">Type: shirt</h5>
+                        <p class="details-product col-12 ps-3">Some quick example text to build on the card title and
+                            make up the bulk of the card's content. </p>
+                        <h6 class="product-price col-12 ps-3"><span class="new-price me-4">EG 300</span><del>EG
+                                250</del></h6>
+                    </div>
+                    <div class="BTn-section d-flex align-items-center justify-content-between">
+                        <span class="add-to-cart d-flex col-5 ">Add To cart</span>
+                        <span class="buy-now d-flex col-5">Buy Now</span>
+                    </div>
+                </div>
+                <div class="product-card col-3 d-flex flex-column ">
+                    <div class="img-section col-12">
+                        <img src="./images/women/products/7.jfif" class="card-img-top" alt="..." />
+                    </div>
+                    <div class="description-product">
+                        <h4 class="Brand-name col-12 ps-3">zara</h4>
+                        <h5 class="text-muted col-12 ps-3">Type: shirt</h5>
+                        <p class="details-product col-12 ps-3">Some quick example text to build on the card title and
+                            make up the bulk of the card's content. </p>
+                        <h6 class="product-price col-12 ps-3"><span class="new-price me-4">EG 300</span><del>EG
+                                250</del></h6>
+                    </div>
+                    <div class="BTn-section d-flex align-items-center justify-content-between">
+                        <span class="add-to-cart d-flex col-5 ">Add To cart</span>
+                        <span class="buy-now d-flex col-5">Buy Now</span>
+                    </div>
+                </div>
+                <div class="product-card col-3 d-flex flex-column ">
+                    <div class="img-section col-12">
+                        <img src="./images/women/products/9.jfif" class="card-img-top" alt="..." />
+                    </div>
+                    <div class="description-product">
+                        <h4 class="Brand-name col-12 ps-3">zara</h4>
+                        <h5 class="text-muted col-12 ps-3">Type: shirt</h5>
+                        <p class="details-product col-12 ps-3">Some quick example text to build on the card title and
+                            make up the bulk of the card's content. </p>
+                        <h6 class="product-price col-12 ps-3"><span class="new-price me-4">EG 300</span><del>EG
+                                250</del></h6>
+                    </div>
+                    <div class="BTn-section d-flex align-items-center justify-content-between">
+                        <span class="add-to-cart d-flex col-5 ">Add To cart</span>
+                        <span class="buy-now d-flex col-5">Buy Now</span>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
