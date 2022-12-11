@@ -33,86 +33,109 @@
                     <h4>Filters</h4>
                 </div>
                 <hr />
-                <div class="list d-flex justify-content-between align-items-center  my-1  flex-column">
-                    <div class="Header_List d-flex justify-content-between align-items-center py-2 my-1 px-3">
-                        <h4 class="type fs-6 ">Type</h4>
-                        <span class="Arrow_down "><i class="fa-solid fa-angle-down   "></i></span>
-                    </div>
-                    <div class="Filter_by d-flex align-items-start justify-content-between  flex-column">
-                        <div class="option d-flex align-items-center justify-content-start  ">
-                            <input type="checkbox" data-name = "shirt" id="check_filter">
-                            <label class="type_name">shirt</label>
+                <form action="/women" method="post">
+                    <div class="list d-flex justify-content-between align-items-center my-1 flex-column">
+                        <div class="Header_List d-flex justify-content-between align-items-center py-2 my-1 px-3">
+                            <h4 class="type fs-6 ">Type</h4>
+                            <span class="Arrow_down "><i class="fa-solid fa-angle-down"></i></span>
                         </div>
-                        <div class="option d-flex align-items-center justify-content-start ">
-                            <input type="checkbox"  data-name = "dresess" id="check_filter">
-                            <label class="type_name">dresess</label>
-                        </div>
-
-                    </div>
-                </div>
-                <hr />
-                <div class="list d-flex justify-content-between align-items-center  my-1  flex-column">
-                    <div class="Header_List d-flex justify-content-between align-items-center py-2 my-1 px-3">
-                        <h4 class="Brand fs-6 ">Brand</h4>
-                        <span class="Arrow_down "><i class="fa-solid fa-angle-down   "></i></span>
-                    </div>
-                    <div class="Filter_by d-flex align-items-start justify-content-between  flex-column">
-                        <div class="option d-flex align-items-center justify-content-start ">
-                            <input type="checkbox">
-                            <label class="type_name">shirt</label>
-                        </div>
-                        <div class="option d-flex align-items-center justify-content-start ">
-                            <input type="checkbox">
-                            <label class="type_name">dresess</label>
-                        </div>
-                        <div class="option d-flex align-items-center justify-content-start ">
-                            <input type="checkbox">
-                            <label class="type_name">dresess</label>
-                        </div>
-                        <div class="option d-flex align-items-center justify-content-start ">
-                            <input type="checkbox">
-                            <label class="type_name">dresess</label>
-                        </div>
-
-                    </div>
-                </div>
-                <hr />
-                <div class="list d-flex justify-content-between align-items-center  my-1  flex-column">
-                    <div class="Header_List d-flex justify-content-between align-items-center py-2 my-1 px-3">
-                        <h4 class="Price fs-6 ">Price</h4>
-                        <span class="Arrow_down "><i class="fa-solid fa-angle-down   "></i></span>
-                    </div>
-                    <div class="Filter_by d-flex align-items-start justify-content-between  flex-column">
-                        <div class="option d-flex align-items-center justify-content-start flex-column  ">
-                            <div class="peice-range">
-                                <input type="range" min="100" max="500" value="135" id="lower" >
-                                <input type="range" min="100" max="500" value="500"id="max" >
+                        <div class="Filter_by d-flex align-items-start justify-content-between flex-column">
+                            <div class="option d-flex align-items-center justify-content-start  ">
+                                <input type="checkbox" value="shirt" name="shirt" id="check_filter">
+                                <label class="type_name">shirt</label>
                             </div>
-                            <div class="filter_view d-flex align-items-center justif-content-between">
-                                <span class="Filtter-price  d-flex">FILTER</span>
-                                <span class="view-price  d-flex" id="min_value"></span>
-                                <span class="view-price_max d-flex" id="max_value"></span>
+                            <div class="option d-flex align-items-center justify-content-start ">
+                                <input type="checkbox" value="dresses" name="dresses" id="check_filter">
+                                <label class="type_name">dresses</label>
+                            </div>
+
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="list d-flex justify-content-between align-items-center  my-1  flex-column">
+                        <div class="Header_List d-flex justify-content-between align-items-center py-2 my-1 px-3">
+                            <h4 class="Brand fs-6 ">Brand</h4>
+                            <span class="Arrow_down "><i class="fa-solid fa-angle-down"></i></span>
+                        </div>
+                        <div class="Filter_by d-flex align-items-start justify-content-between  flex-column">
+                            <div class="option d-flex align-items-center justify-content-start ">
+                                <input type="checkbox">
+                                <label class="type_name">shirt</label>
+                            </div>
+                            <div class="option d-flex align-items-center justify-content-start ">
+                                <input type="checkbox">
+                                <label class="type_name">dresess</label>
+                            </div>
+                            <div class="option d-flex align-items-center justify-content-start ">
+                                <input type="checkbox">
+                                <label class="type_name">dresess</label>
+                            </div>
+                            <div class="option d-flex align-items-center justify-content-start ">
+                                <input type="checkbox">
+                                <label class="type_name">dresess</label>
+                            </div>
+
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="list d-flex justify-content-between align-items-center  my-1  flex-column">
+                        <div class="Header_List d-flex justify-content-between align-items-center py-2 my-1 px-3">
+                            <h4 class="Price fs-6 ">Price</h4>
+                            <span class="Arrow_down "><i class="fa-solid fa-angle-down   "></i></span>
+                        </div>
+                        <div class="Filter_by d-flex align-items-start justify-content-between  flex-column">
+                            <div class="option d-flex align-items-center justify-content-start flex-column  ">
+                                <div class="peice-range">
+                                    <input type="range" min="100" max="500" value="135" id="lower">
+                                    <input type="range" min="100" max="500" value="500" id="max">
+                                </div>
+                                <div class="filter_view d-flex align-items-center justif-content-between">
+                                    <span class="Filtter-price  d-flex">FILTER</span>
+                                    <span class="view-price  d-flex" id="min_value"></span>
+                                    <span class="view-price_max d-flex" id="max_value"></span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="list d-flex justify-content-between align-items-center  my-1  flex-column">
+                        <div class="Header_List d-flex justify-content-between align-items-center py-2 my-1 px-3">
+                            <h4 class="color fs-6 ">color</h4>
+                            <span class="Arrow_down "><i class="fa-solid fa-angle-down  "></i></span>
+                        </div>
+                        <div class="Filter_by d-flex align-items-start justify-content-between  flex-column">
+                            <div class="option d-flex align-items-center justify-content-start  ">
+                                <input type="color" id="color_picker">
                             </div>
                         </div>
-
                     </div>
-                </div>
-                <hr />
-                <div class="list d-flex justify-content-between align-items-center  my-1  flex-column">
-                    <div class="Header_List d-flex justify-content-between align-items-center py-2 my-1 px-3">
-                        <h4 class="color fs-6 ">color</h4>
-                        <span class="Arrow_down "><i class="fa-solid fa-angle-down  "></i></span>
-                    </div>
-                    <div class="Filter_by d-flex align-items-start justify-content-between  flex-column">
-                        <div class="option d-flex align-items-center justify-content-start  ">
-                            <input type="color" id="color_picker">    
-                        </div>
-                    </div>
-                </div>
+                    <button class="btn btn-primary">Search</button>
+                </form>
                 <hr />
             </div>
             <div class="col-8 col-md-9 d-flex justify-content-center justify-content-lg-between flex-wrap gap-3">
-                <div class="card mt-3" style="width: 18rem">
+                <% for (let product of products) {%>
+                    <div class="card mt-3" style="width: 18rem">
+                        <img src=<%=product.images.length ? product.images[0].url
+                            : "https://res.cloudinary.com/dhulz3zfg/image/upload/v1669515382/Exclusv/women_shirt/item2previwe"
+                            %> %> class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-title">Brand name: <%= product.brandName %>
+                            </h5>
+                            <h5 class="text-muted">Type: <%= product.type %>
+                            </h5>
+                            <p class="card-text">
+                                <%= product.description %>
+                            </p>
+                            <div class="card-price d-flex justify-content-between align-items-center">
+                                <span class="fs-6 fw-bold">EG <%= product.price %></span>
+                                <button class="btn btn-outline-danger">Add to cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    <% } %>
+                        <!-- <div class="card mt-3" style="width: 18rem">
                     <img src="./images/women/banner.jpg" class="card-img-top" alt="..." />
                     <div class="card-body">
                         <h5 class="card-title">Brand name: xyz</h5>
@@ -141,22 +164,7 @@
                             <button class="btn btn-outline-danger">Add to cart</button>
                         </div>
                     </div>
-                </div>
-                <div class="card mt-3" style="width: 18rem">
-                    <img src="./images/women/banner.jpg" class="card-img-top" alt="..." />
-                    <div class="card-body">
-                        <h5 class="card-title">Brand name: xyz</h5>
-                        <h5 class="text-muted">Type: shirt</h5>
-                        <p class="card-text">
-                            Some quick example text to build on the card title and make up the
-                            bulk of the card's content.
-                        </p>
-                        <div class="card-price d-flex justify-content-between align-items-center">
-                            <span class="fs-6 fw-bold">EG 500.00</span>
-                            <button class="btn btn-outline-danger">Add to cart</button>
-                        </div>
-                    </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
