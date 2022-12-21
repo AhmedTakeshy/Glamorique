@@ -84,17 +84,19 @@ $(document).ready(function () {
 
 // ////////////////////start-Arrow-Down-function//////////////////////////
 let Arrow_down = document.querySelectorAll(".Arrow_down");
-Arrow_down.forEach(Arrow => {
-  Arrow.addEventListener("click",(e) => {
+Arrow_down.forEach((Arrow) => {
+  Arrow.addEventListener("click", (e) => {
     e.stopPropagation();
-    e.target.parentElement.parentElement.parentElement.classList.toggle("Full-heigt");
-    (e.target.parentElement.parentElement.parentElement.classList.contains("Full-heigt") ? e.target.innerHTML = `<i class="fa-solid fa-angle-up"></i>` :
-      e.target.innerHTML = `<i class="fa-solid fa-angle-down  " ></i>`)    
-  })
-})
+    console.log(e.target);
+    e.target.closest(".list").classList.toggle("Full-heigt");
+    e.target.closest(".list").classList.contains("Full-heigt")
+      ? (e.target.innerHTML = `<i class="fa-solid fa-angle-up"></i>`)
+      : (e.target.innerHTML = `<i class="fa-solid fa-angle-down  " ></i>`);
+  });
+});
 // ////////////////////end-Arrow-Down-function//////////////////////////
-// ////////////////////sart-get-value//////////////////////////////////
-let lower_value_range = document.getElementById("lower")
+// ////////////////////start-get-value//////////////////////////////////
+let lower_value_range = document.getElementById("lower");
 let max_value_range = document.getElementById("max");
 let lower_value_view = document.getElementById("min_value");
 let max_value_view = document.getElementById("max_value");
@@ -102,23 +104,30 @@ max_value_view.innerHTML = "max $" + max_value_range.value;
 lower_value_view.innerHTML = "min $" + lower_value_range.value;
 
 lower_value_range.oninput = function () {
-  (lower_value_range.vlaue == max_value_range.value ? lower_value_range.value = max_value_range.value - 100 : "lower_value_range.value")
+  lower_value_range.value >= max_value_range.value
+    ? (lower_value_range.value = max_value_range.value - 100)
+    : "lower_value_range.value";
   lower_value_view.innerHTML = "min $" + lower_value_range.value;
-}
+};
 max_value_range.oninput = () => {
-  (max_value_range.vlaue == lower_value_range.value ? max_value_range.value = lower_value_range.value + 100 : "max_value_range.value")
+  max_value_range.value <= lower_value_range.value
+    ? (max_value_range.value = lower_value_range.value + 100)
+    : "max_value_range.value";
   max_value_view.innerHTML = "max $" + max_value_range.value;
-}
+};
 // ////////////////////end-get-value///////////////////////////////////
 // ////////////////////start-get-color//////////////////////////////////
 let color_Picker = document.getElementById("color_picker");
 color_Picker.oninput = () => {
-  console.log(color_Picker.value)
-}
+  console.log(color_Picker.value);
+};
 
 // ////////////////////start-get-color//////////////////////////////////
 
-
 // ////////////////////start-get-data-atrrbiute--function//////////////
+let check_filter_data = document.querySelectorAll(".check_filter");
+check_filter_data.forEach((ele) => {
+  console.log(ele);
+});
 
 // ////////////////////end-get-data-atrrbiute--function//////////////
