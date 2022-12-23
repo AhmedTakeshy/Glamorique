@@ -4,6 +4,13 @@ let image_section = document.querySelectorAll(".image_section");
 let menu_Icon = document.querySelector(".menu-icon");
 let side_Menu = document.querySelector(".side_menu");
 
+// start ads window 
+let ads_container = document.querySelector(".ads_container");
+document.body.addEventListener("DOMContentLoaded",() => {
+  console.log('Is load')
+})
+// end ads window 
+
 // start open side menu form BTn
 menu_Icon.addEventListener("click", () => {
   side_Menu.classList.add("active");
@@ -124,4 +131,3 @@ check_filter_data.forEach((ele) => {
 });
 
 // ////////////////////end-get-data-atrrbiute--function//////////////
-// /////////////////////start filter section ///////////////////////
