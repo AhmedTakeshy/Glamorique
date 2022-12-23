@@ -43,23 +43,20 @@ app.get("/women", async (req, res) => {
 app.post("/women", async (req, res) => {
   const filterResult = req.body;
   console.log("🚀 ~ file: index.js:45 ~ app.post ~ filterResult", filterResult);
-  // const products = await Product.find({ type: filterResult });
-  res.redirect("/women");
+  const products = await Product.find({
+    type: filterResult.type,
+    brand: { $in: [`${filterResult.brand}`] },
+    price: {
+      $gte: +filterResult.lower,
+      $lte: +filterResult.max,
+    },
+  });
+  res.render("women", { products });
 });
 
 app.all("*", (req, res) => {
   res.render("error");
 });
-
-// app.all("*", (req, res, next) => {
-//   next(new ExpressError("Page Not Found", 404));
-// });
-
-// app.use((err, req, res, next) => {
-//   console.log(err);
-//   const { statusCode = 500 } = err;
-//   res.status(statusCode).render("error");
-// });
 
 app.listen(3000, () => {
   console.log("Connection up and running");

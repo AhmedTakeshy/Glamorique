@@ -41,12 +41,13 @@
                         </div>
                         <div class="Filter_by d-flex align-items-start justify-content-between flex-column">
                             <div class="option d-flex align-items-center justify-content-start  ">
-                                <input type="checkbox" value="shirt" name="shirt" id="check_filter">
-                                <label class="type_name">shirt</label>
+                                <input type="radio" value="shirts" name="type" id="check_filters">
+                                <label for="shirts" class="type_name">Shirts</label>
+
                             </div>
                             <div class="option d-flex align-items-center justify-content-start ">
-                                <input type="checkbox" value="dresses" name="dresses" id="check_filter">
-                                <label class="type_name">dresses</label>
+                                <input type="radio" value="shoes" name="type" id="check_filter">
+                                <label for="shoes" class="type_name">Shoes</label>
                             </div>
 
                         </div>
@@ -59,20 +60,20 @@
                         </div>
                         <div class="Filter_by d-flex align-items-start justify-content-between  flex-column">
                             <div class="option d-flex align-items-center justify-content-start ">
-                                <input type="checkbox">
-                                <label class="type_name">shirt</label>
+                                <input value="nike" name="brand" type="checkbox">
+                                <label class="type_name">Nike</label>
                             </div>
                             <div class="option d-flex align-items-center justify-content-start ">
-                                <input type="checkbox">
-                                <label class="type_name">dresess</label>
+                                <input value="adidas" name="brand" type="checkbox">
+                                <label class="type_name">Adidas</label>
                             </div>
                             <div class="option d-flex align-items-center justify-content-start ">
-                                <input type="checkbox">
-                                <label class="type_name">dresess</label>
+                                <input value="puma" name="brand" type="checkbox">
+                                <label class="type_name">Puma</label>
                             </div>
                             <div class="option d-flex align-items-center justify-content-start ">
-                                <input type="checkbox">
-                                <label class="type_name">dresess</label>
+                                <input value="lcw" name="brand" type="checkbox">
+                                <label class="type_name">LCW</label>
                             </div>
 
                         </div>
@@ -81,13 +82,13 @@
                     <div class="list d-flex justify-content-between align-items-center  my-1  flex-column">
                         <div class="Header_List d-flex justify-content-between align-items-center py-2 my-1 px-3">
                             <h4 class="Price fs-6 ">Price</h4>
-                            <span class="Arrow_down "><i class="fa-solid fa-angle-down   "></i></span>
+                            <span class="Arrow_down "><i class="fa-solid fa-angle-down "></i></span>
                         </div>
                         <div class="Filter_by d-flex align-items-start justify-content-between  flex-column">
                             <div class="option d-flex align-items-center justify-content-start flex-column  ">
-                                <div class="peice-range">
-                                    <input type="range" min="100" max="500" value="135" id="lower">
-                                    <input type="range" min="100" max="500" value="500" id="max">
+                                <div class="price-range">
+                                    <input value="0" name="lower" type="range" min="0" max="10000" id="lower">
+                                    <input value="10000" name="max" type="range" min="0" max="10000" id="max">
                                 </div>
                                 <div class="filter_view d-flex align-items-center justif-content-between">
                                     <span class="Filtter-price  d-flex">FILTER</span>
@@ -115,6 +116,32 @@
                 <hr />
             </div>
             <div class="col-8 col-md-9 d-flex justify-content-center justify-content-lg-between flex-wrap gap-3">
+                <% for(let product of products) { %>
+                    <div class="product-card col-3 d-flex flex-column ">
+                        <div class="img-section col-12">
+                            <img src=" <%= product.images[0].url%> " alt="" class="card-img-top" alt="...">
+                        </div>
+                        <div class="description-product">
+                            <h4 class="Brand-name col-12 ps-3">Brand name: <%= product.brandName %>
+                            </h4>
+                            <h5 class="text-muted col-12 ps-3">Type: <%= product.type %>
+                            </h5>
+                            <p class="details-product col-12 ps-3">
+                                <%= product.description %>
+                            </p>
+                            <h6 class="product-price col-12 ps-3"><span class="new-price me-4">EG 300</span>
+                                <del>EG <%= product.price %>
+                                </del>
+                            </h6>
+                        </div>
+                        <div class="BTn-section d-flex align-items-center justify-content-between">
+                            <span class="add-to-cart d-flex col-5 ">Add To cart</span>
+                            <span class="buy-now d-flex col-5">Buy Now</span>
+                        </div>
+                    </div>
+                    <% } %>
+            </div>
+            <!-- <div class="col-8 col-md-9 d-flex justify-content-center justify-content-lg-between flex-wrap gap-3">
                 <div class="product-card col-3 d-flex flex-column ">
                     <div class="img-section col-12">
                         <img src="./images/women/products/2.png" class="card-img-top" alt="..." />
@@ -217,8 +244,7 @@
                         <span class="buy-now d-flex col-5">Buy Now</span>
                     </div>
                 </div>
-
-            </div>
+            </div> -->
         </div>
     </div>
     <%- include("./partials/footer.ejs") %>
