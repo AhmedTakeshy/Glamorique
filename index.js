@@ -54,6 +54,16 @@ app.post("/women", async (req, res) => {
   res.render("women", { products });
 });
 
+app.get("/women/:id", async (req, res) => {
+  const { id } = req.params;
+  const foundProduct = await Product.findById(id);
+  if (foundProduct) {
+    res.render("product", { foundProduct });
+  } else {
+    res.render("error");
+  }
+});
+
 app.all("*", (req, res) => {
   res.render("error");
 });
