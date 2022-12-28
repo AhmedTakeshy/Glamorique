@@ -15,5 +15,3 @@ const ProductSchema = new Schema({
 });
 
 export default mongoose.model("Product", ProductSchema);
-
-// { type : Array , "default" : [] }
