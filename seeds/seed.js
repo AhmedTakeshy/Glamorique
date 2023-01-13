@@ -12,7 +12,7 @@ db.once("open", () => {
 });
 
 const seedDB = async () => {
-  await Product.deleteMany({});
+  // await Product.deleteMany({});
   for (let i = 0; i < 22; i++) {
     const product = new Product({
       type: allData[i].type,

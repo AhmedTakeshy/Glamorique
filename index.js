@@ -42,6 +42,7 @@ app.get("/women", async (req, res) => {
 
 app.post("/women", async (req, res) => {
   const filterResult = req.body;
+  console.log("🚀 ~ file: index.js:45 ~ app.post ~ filterResult", filterResult);
   const products = await Product.find({
     type: filterResult.type,
     brand: { $in: [`${filterResult.brand}`] },
