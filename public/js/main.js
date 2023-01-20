@@ -5,10 +5,11 @@ let menu_Icon = document.querySelector(".menu-icon");
 let side_Menu = document.querySelector(".side_menu");
 
 // start ads window
-// let ads_container = document.querySelector(".ads_container");
-// document.body.addEventListener("load",() => {
-//   console.log('Is load')
-// })
+let ads_container = document.querySelector(".ads_container");
+document.body.addEventListener("load", () => {
+  console.log("Is load");
+  ads_container.classList.add("open");
+});
 // end ads window
 
 // start open side menu form BTn
