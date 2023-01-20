@@ -6,7 +6,7 @@ let side_Menu = document.querySelector(".side_menu");
 
 // start ads window
 let ads_container = document.querySelector(".ads_container");
-document.body.addEventListener("load", () => {
+document.body.addEventListener("DOMContentLoaded", () => {
   console.log("Is load");
   ads_container.classList.add("open");
 });
