@@ -18,7 +18,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 
-mongoose.connect("mongodb://localhost:27017/exclusv", {});
+mongoose.connect("mongodb://127.0.0.1:27017/exclusv", {});
 
 const db = mongoose.connection;
 
@@ -61,6 +61,10 @@ app.get("/women/:id", async (req, res) => {
   } else {
     res.render("error");
   }
+});
+
+app.get("/men", (req, res) => {
+  res.render("Men");
 });
 
 app.all("*", (req, res) => {

@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 import Product from "../models/product.js";
 import allData from "./json-files/AllData.js";
 
-mongoose.connect("mongodb://localhost:27017/exclusv", {});
+mongoose.connect("mongodb://127.0.0.1:27017/exclusv", {});
 
 const db = mongoose.connection;
 
