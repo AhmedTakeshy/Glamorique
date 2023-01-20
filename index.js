@@ -64,10 +64,6 @@ app.get("/women/:id", async (req, res) => {
   }
 });
 
-app.get("/men", (req, res) => {
-  res.render("Men");
-});
-
 app.all("*", (req, res) => {
   res.render("error");
 });
