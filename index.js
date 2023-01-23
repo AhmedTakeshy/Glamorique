@@ -7,6 +7,7 @@ import { fileURLToPath } from "url";
 import Product from "./models/product.js";
 import mongoose from "mongoose";
 import methodOverride from "method-override";
+import session from "express-session";
 
 const app = express();
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -17,6 +18,13 @@ app.set("views", path.join(__dirname, "views"));
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
+app.use(
+  session({
+    secret: "your-secret-key",
+    resave: false,
+    saveUninitialized: true,
+  })
+);
 
 mongoose.connect("mongodb://127.0.0.1:27017/exclusv", {});
 
@@ -63,6 +71,10 @@ app.get("/women/:id", async (req, res) => {
     res.render("error");
   }
 });
+
+// app.get("/cart", (req, res) => {
+//   res.render
+// });
 
 app.all("*", (req, res) => {
   res.render("error");

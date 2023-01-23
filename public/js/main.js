@@ -3,6 +3,11 @@ let list_menu_links = document.querySelectorAll(".list_menu li");
 let image_section = document.querySelectorAll(".image_section");
 let menu_Icon = document.querySelector(".menu-icon");
 let side_Menu = document.querySelector(".side_menu");
+const showCart = document.querySelector(".showCart");
+
+showCart.addEventListener("click", function () {
+  document.querySelector(".cart").classList.toggle("hidden");
+});
 
 // start ads window
 let ads_container = document.querySelector(".ads_container");
