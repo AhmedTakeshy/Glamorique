@@ -117,30 +117,33 @@
             </div>
             <div class="col-8 col-md-9 d-flex justify-content-center justify-content-lg-between flex-wrap gap-3">
                 <% for(let product of products) { %>
-                    <a href="/women/<%= product.id %> ">
-                        <div class="product-card col-3 d-flex flex-column ">
-                            <div class="img-section col-12">
-                                <img src=" <%= product.images[0].url%> " alt="" class="card-img-top" alt="...">
-                            </div>
-                            <div class="description-product">
-                                <h4 class="Brand-name col-12 ps-3">Brand name: <%= product.brandName %>
-                                </h4>
-                                <h5 class="text-muted col-12 ps-3">Type: <%= product.type %>
-                                </h5>
-                                <p class="details-product col-12 ps-3">
-                                    <%= product.description %>
-                                </p>
-                                <h6 class="product-price col-12 ps-3"><span class="new-price me-4">EG 300</span>
-                                    <del>EG <%= product.price %>
-                                    </del>
-                                </h6>
-                            </div>
-                            <div class="BTn-section d-flex align-items-center justify-content-between">
-                                <span class="add-to-cart d-flex col-5 ">Add To cart</span>
-                                <span class="buy-now d-flex col-5">Buy Now</span>
-                            </div>
+
+                    <div class="product-card col-3 d-flex flex-column ">
+                        <div class="img-section col-12">
+                            <img src=" <%= product.images[0].url%> " alt="" class="card-img-top" alt="...">
                         </div>
-                    </a>
+                        <div class="description-product">
+                            <h4 class="Brand-name col-12 ps-3">Brand name: <%= product.brandName %>
+                            </h4>
+                            <h5 class="text-muted col-12 ps-3">Type: <%= product.type %>
+                            </h5>
+                            <p class="details-product col-12 ps-3">
+                                <%= product.description %>
+                            </p>
+                            <h6 class="product-price col-12 ps-3"><span class="new-price me-4">EG <%= product.price %>
+                                </span>
+                                <del>EG 2000</del>
+                            </h6>
+                        </div>
+                        <div class="BTn-section d-flex align-items-center justify-content-between">
+                            <form id="submit" class="d-flex col-5 " action="/cart" method="post">
+                                <input type="hidden" name="productId" value="<%=product.id%>">
+                                <button type="submit" class="add-to-cart">Add To Cart</button>
+                            </form>
+                            <a href="/women/<%= product.id %> " class="show-item d-flex col-5">Show Item</a>
+                        </div>
+                    </div>
+
                     <% } %>
             </div>
             <!-- <div class="col-8 col-md-9 d-flex justify-content-center justify-content-lg-between flex-wrap gap-3">

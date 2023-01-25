@@ -6,7 +6,13 @@ let side_Menu = document.querySelector(".side_menu");
 const showCart = document.querySelector(".showCart");
 
 showCart.addEventListener("click", function () {
-  document.querySelector(".cart").classList.toggle("hidden");
+  const cart = document.querySelector(".cart");
+  cart.classList.toggle("hidden");
+});
+
+document.getElementById("submit").addEventListener("submit", function (event) {
+  event.preventDefault();
+  console.log("submitted");
 });
 
 // start ads window

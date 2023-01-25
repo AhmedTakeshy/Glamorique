@@ -8,6 +8,7 @@ import Product from "./models/product.js";
 import mongoose from "mongoose";
 import methodOverride from "method-override";
 import session from "express-session";
+import MongoStore from "connect-mongo";
 
 const app = express();
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -18,15 +19,33 @@ app.set("views", path.join(__dirname, "views"));
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
-app.use(
-  session({
-    secret: "your-secret-key",
-    resave: false,
-    saveUninitialized: true,
-  })
-);
 
-mongoose.connect("mongodb://127.0.0.1:27017/exclusv", {});
+const dbUrl = process.env.MDB;
+const secret = process.env.SECRET;
+
+const store = MongoStore.create({
+  mongoUrl: dbUrl,
+  secret,
+  touchAfter: 24 * 3600,
+});
+
+const sessionConfig = {
+  store,
+  name: "exclusv",
+  secret,
+  resave: false,
+  saveUninitialized: true,
+  cookie: {
+    httpOnly: true,
+    // secure: true
+    expires: Date.now() + 1000 * 60 * 60,
+    maxAge: 1000 * 60 * 60,
+  },
+};
+
+app.use(session(sessionConfig));
+
+mongoose.connect(dbUrl, {});
 
 const db = mongoose.connection;
 
@@ -50,7 +69,6 @@ app.get("/women", async (req, res) => {
 
 app.post("/women", async (req, res) => {
   const filterResult = req.body;
-  console.log("🚀 ~ file: index.js:45 ~ app.post ~ filterResult", filterResult);
   const products = await Product.find({
     type: filterResult.type,
     brand: { $in: [`${filterResult.brand}`] },
@@ -72,9 +90,32 @@ app.get("/women/:id", async (req, res) => {
   }
 });
 
+app.post("/cart", async (req, res) => {
+  const { productId } = req.body;
+  const product = await Product.findById(productId);
+  let cart = req.session.cart;
+  if (!cart) {
+    cart = {
+      items: {},
+      totalAmount: 0,
+    };
+  }
+  if (cart.items[productId]) {
+    cart.items[productId]++;
+    cart.totalAmount += product.price;
+  } else {
+    cart.items[productId] = 1;
+    cart.totalAmount += product.price;
+  }
+  console.log(cart);
+  req.session.cart = cart;
+  // res.status(204).send();
+  res.redirect("./women");
+});
+
 // app.get("/cart", (req, res) => {
-//   res.render
-// });
+//   const add
+//  })
 
 app.all("*", (req, res) => {
   res.render("error");

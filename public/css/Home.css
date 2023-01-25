@@ -1032,8 +1032,7 @@ footer {
 }
 
 .hidden {
-  /* display: none; */
-  animation: slide-up 300ms ease-out forwards;
+  display: none;
 }
 
 @media (min-width: 768px) {
@@ -1045,30 +1044,15 @@ footer {
 
 @keyframes slide-down {
   from {
+    display: inline-block;
     opacity: 0;
     transform: translateY(-3rem);
   }
   to {
+    display: inline-block;
     opacity: 1;
     transform: translateY(0);
   }
 }
-@keyframes slide-up {
-  from {
-    opacity: 1;
-    transform: translateY(0);
-    -webkit-transform: translateY(0);
-    -moz-transform: translateY(0);
-    -ms-transform: translateY(0);
-    -o-transform: translateY(0);
-  }
-  to {
-    opacity: 0;
-    transform: translateY(-3rem);
-    -webkit-transform: translateY(-3rem);
-    -moz-transform: translateY(-3rem);
-    -ms-transform: translateY(-3rem);
-    -o-transform: translateY(-3rem);
-  }
-}
+
 /* cart end */
