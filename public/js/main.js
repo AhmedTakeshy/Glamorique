@@ -4,15 +4,70 @@ let image_section = document.querySelectorAll(".image_section");
 let menu_Icon = document.querySelector(".menu-icon");
 let side_Menu = document.querySelector(".side_menu");
 const showCart = document.querySelector(".showCart");
+const addToCartButtons = document.querySelectorAll(".add-to-cart");
+const cartHtml = document.querySelector(".cart");
+
+// import axios from "./axios";
+// const axios = require("axios");
+
+for (let button of addToCartButtons) {
+  button.addEventListener("click", async (e) => {
+    console.log("clicked");
+    // e.preventDefault();
+    const productId = e.target.dataset.id;
+    const response = await fetch("/add-to-cart", {
+      method: "POST",
+      body: JSON.stringify({ productId }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    data();
+  });
+}
+async function data() {
+  const response = await fetch("/add-to-cart");
+  const res = await response.json();
+  updateCartInformationOnPage(res);
+}
+
+function updateCartInformationOnPage(cart) {
+  // Update the total amount on the page
+  const totalAmount = document.getElementById("totalAmount");
+  const cartDiv = document.querySelector(".display-product");
+  const product = cart.items
+    .map((item) => {
+      return ` 
+    <p>Name: ${item.name}</p>
+    <p>Price: ${item.price}</p>
+    <p>Quantity: ${item.quantity}</p>
+`;
+    })
+    .join("");
+  totalAmount.innerText = `Total: $${cart.totalAmount}`;
+  console.log(cart);
+  cartDiv.innerHTML = product;
+  // Update the number of items on the page
+  // const product = document.getElementById("product");
+
+  // Update the list of items on the page
+  // product.innerHTML = "";
+  // for (let item of cart.items) {
+  //   const pName = document.createElement("p");
+  //   const pPrice = document.createElement("p");
+  //   const pQty = document.createElement("p");
+  //   pName.innerText = `Name: ${item.name}`;
+  //   pPrice.innerText = `Price: ${item.price} `;
+  //   pQty.innerText = `Quantity: ${item.quantity}`;
+  //   product.appendChild(pName);
+  //   product.appendChild(pPrice);
+  //   product.appendChild(pQty);
+  // }
+}
 
 showCart.addEventListener("click", function () {
-  const cart = document.querySelector(".cart");
-  cart.classList.toggle("hidden");
-});
-
-document.getElementById("submit").addEventListener("submit", function (event) {
-  event.preventDefault();
-  console.log("submitted");
+  cartHtml.classList.toggle("hidden");
+  // cartHtml.classList.toggle("overlay");
 });
 
 // start ads window

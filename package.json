@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/Exclusv-developers/Exclusv#readme",
   "dependencies": {
+    "axios": "^1.2.5",
     "cloudinary": "^1.32.0",
     "connect-mongo": "^4.6.0",
     "dotenv": "^16.0.3",

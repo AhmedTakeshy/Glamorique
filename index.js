@@ -18,6 +18,7 @@ app.set("views", path.join(__dirname, "views"));
 
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 app.use(methodOverride("_method"));
 
 const dbUrl = process.env.MDB;
@@ -53,6 +54,19 @@ db.on("error", console.error.bind(console, "connection error:"));
 db.once("open", () => {
   console.log("Database connected");
 });
+
+// app.use((res, req, next) => {
+//   let cart = req.session.cartItems;
+//   if (!cart) {
+//     cart = {
+//       items: {},
+//       totalAmount: 0,
+//     };
+//     req.session.cartItems = cart;
+//   }
+//   res.locals.cartItems = cart;
+//   next();
+// });
 
 app.get("/", (req, res) => {
   res.render("Home");
@@ -90,32 +104,38 @@ app.get("/women/:id", async (req, res) => {
   }
 });
 
-app.post("/cart", async (req, res) => {
+app.post("/add-to-cart", async (req, res) => {
   const { productId } = req.body;
-  const product = await Product.findById(productId);
+  const foundProduct = await Product.findById(productId);
   let cart = req.session.cart;
   if (!cart) {
     cart = {
-      items: {},
+      items: [],
       totalAmount: 0,
     };
   }
-  if (cart.items[productId]) {
-    cart.items[productId]++;
-    cart.totalAmount += product.price;
+  let existingProduct = cart.items.find((item) => item.id === productId);
+  if (existingProduct) {
+    existingProduct.quantity++;
+    cart.totalAmount += foundProduct.price;
   } else {
-    cart.items[productId] = 1;
-    cart.totalAmount += product.price;
+    cart.items.push({
+      id: foundProduct.id,
+      name: foundProduct.brandName,
+      price: foundProduct.price,
+      quantity: 1,
+    });
+    cart.totalAmount += foundProduct.price;
   }
-  console.log(cart);
   req.session.cart = cart;
-  // res.status(204).send();
-  res.redirect("./women");
+  // res.status(204).send(cart); //it will prevent the page from reloading
+  res.end();
 });
 
-// app.get("/cart", (req, res) => {
-//   const add
-//  })
+app.get("/add-to-cart", async (req, res) => {
+  const cart = req.session.cart;
+  res.json(cart);
+});
 
 app.all("*", (req, res) => {
   res.render("error");

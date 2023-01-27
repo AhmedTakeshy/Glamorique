@@ -136,10 +136,10 @@
                             </h6>
                         </div>
                         <div class="BTn-section d-flex align-items-center justify-content-between">
-                            <form id="submit" class="d-flex col-5 " action="/cart" method="post">
-                                <input type="hidden" name="productId" value="<%=product.id%>">
-                                <button type="submit" class="add-to-cart">Add To Cart</button>
-                            </form>
+                            <!-- <form class="d-flex col-5 " action="/add-to-cart" method="post"> -->
+                            <!-- <input type="hidden" name="productId" value="<%#=product.id%>"> -->
+                            <button class="add-to-cart" data-id="<%=product.id%>">Add To Cart</button>
+                            <!-- </form> -->
                             <a href="/women/<%= product.id %> " class="show-item d-flex col-5">Show Item</a>
                         </div>
                     </div>
