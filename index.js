@@ -117,7 +117,7 @@ app.post("/add-to-cart", async (req, res) => {
   let existingProduct = cart.items.find((item) => item.id === productId);
   if (existingProduct) {
     existingProduct.quantity++;
-    cart.totalAmount += foundProduct.price;
+    cart.totalAmount = foundProduct.price * existingProduct.quantity;
   } else {
     cart.items.push({
       id: foundProduct.id,
@@ -125,16 +125,19 @@ app.post("/add-to-cart", async (req, res) => {
       price: foundProduct.price,
       quantity: 1,
     });
-    cart.totalAmount += foundProduct.price;
+    cart.totalAmount += foundProduct.price * 1;
   }
   req.session.cart = cart;
-  // res.status(204).send(cart); //it will prevent the page from reloading
   res.end();
 });
 
 app.get("/add-to-cart", async (req, res) => {
   const cart = req.session.cart;
   res.json(cart);
+});
+
+app.post("/remove-from-cart", async (req, res) => {
+  const cart = req.session.cart;
 });
 
 app.all("*", (req, res) => {
