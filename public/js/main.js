@@ -9,7 +9,7 @@ const cartHtml = document.querySelector(".cart");
 
 // import axios from "./axios";
 // const axios = require("axios");
-
+//"/remove-from-cart"
 for (let button of addToCartButtons) {
   button.addEventListener("click", async (e) => {
     console.log("clicked");
@@ -30,6 +30,9 @@ async function data() {
   const res = await response.json();
   updateCartInformationOnPage(res);
 }
+function Delete (){
+  console.log('delete')
+}
 
 function updateCartInformationOnPage(cart) {
   // Update the total amount on the page
@@ -38,18 +41,22 @@ function updateCartInformationOnPage(cart) {
   const product = cart.items
     .map((item) => {
       return ` 
-    <p>Name: ${item.name}</p>
-    <p>Price: ${item.price}</p>
-    <p>Quantity: ${item.quantity}</p>
+      <div class = 'product_content  d-flex align-items-center justify-content-around flex-row' >
+          <p>Name: ${item.name}</p>
+          <p>Price: ${item.price}</p>
+          <p>Quantity: ${item.quantity}</p>
+          <i class="fa-solid fa-trash-can btn btn-danger Remove-product" data-RemoveProduct = '${item.id}'></i>
+      </div>
+  
+     
 `;
-    })
-    .join("");
+      
+    })  .join("");
   totalAmount.innerText = `Total: $${cart.totalAmount}`;
   console.log(cart);
   cartDiv.innerHTML = product;
   // Update the number of items on the page
   // const product = document.getElementById("product");
-
   // Update the list of items on the page
   // product.innerHTML = "";
   // for (let item of cart.items) {
@@ -63,6 +70,13 @@ function updateCartInformationOnPage(cart) {
   //   product.appendChild(pPrice);
   //   product.appendChild(pQty);
   // }
+  const Btn_Remove = [document.querySelectorAll('.Remove-product')];
+ 
+   
+   
+  console.log(Btn_Remove.dataset.RemoveProduct)
+ 
+
 }
 
 showCart.addEventListener("click", function () {
@@ -84,7 +98,7 @@ menu_Icon.addEventListener("click", () => {
 });
 // end open side menu form BTn
 
-// start close Side menu form anywere
+// start close Side menu form anywhere
 document.body.addEventListener("click", (e) => {
   if (
     e.target.classList.contains("side_menu") ||
@@ -191,10 +205,13 @@ color_Picker.oninput = () => {
 
 // ////////////////////start-get-color//////////////////////////////////
 
-// ////////////////////start-get-data-atrrbiute--function//////////////
+// ////////////////////start-get-data-attribute--function//////////////
 let check_filter_data = document.querySelectorAll(".check_filter");
 check_filter_data.forEach((ele) => {
   console.log(ele);
 });
 
 // ////////////////////end-get-data-atrrbiute--function//////////////
+
+
+    // end price section in product page
