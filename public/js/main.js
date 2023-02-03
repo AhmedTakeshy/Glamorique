@@ -90,7 +90,7 @@ function updateCartInformationOnPage(cart) {
       fetch('/remove-from-cart',{
         method: 'POST',
         headers: {
-          'Content-Type':'application/json',
+          "Content-Type": "application/json",
         },
         body: json.stringify({ProductIdRemove})
       })
