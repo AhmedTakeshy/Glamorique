@@ -112,21 +112,25 @@ app.post("/add-to-cart", async (req, res) => {
     cart = {
       items: [],
       totalAmount: 0,
+      totalQuantity:0,
     };
   }
   let existingProduct = cart.items.find((item) => item.id === productId);
   if (existingProduct) {
     existingProduct.quantity++;
+   
     cart.totalAmount = foundProduct.price * existingProduct.quantity;
   } else {
     cart.items.push({
       id: foundProduct.id,
       name: foundProduct.brandName,
       price: foundProduct.price,
-      quantity: 1,
+      quantity: 1
     });
     cart.totalAmount += foundProduct.price * 1;
+    
   }
+
   req.session.cart = cart;
   res.end();
 });

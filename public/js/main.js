@@ -1,3 +1,5 @@
+import { json } from "express";
+
 let sections_linkes = document.querySelectorAll(".sections_linkes li");
 let list_menu_links = document.querySelectorAll(".list_menu li");
 let image_section = document.querySelectorAll(".image_section");
@@ -7,9 +9,7 @@ const showCart = document.querySelector(".showCart");
 const addToCartButtons = document.querySelectorAll(".add-to-cart");
 const cartHtml = document.querySelector(".cart");
 
-// import axios from "./axios";
-// const axios = require("axios");
-//"/remove-from-cart"
+
 for (let button of addToCartButtons) {
   button.addEventListener("click", async (e) => {
     console.log("clicked");
@@ -30,30 +30,39 @@ async function data() {
   const res = await response.json();
   updateCartInformationOnPage(res);
 }
-function Delete (){
-  console.log('delete')
-}
+
 
 function updateCartInformationOnPage(cart) {
   // Update the total amount on the page
   const totalAmount = document.getElementById("totalAmount");
   const cartDiv = document.querySelector(".display-product");
+ const totalQuantity = document.querySelector('.quantity-value');
   const product = cart.items
     .map((item) => {
       return ` 
-      <div class = 'product_content  d-flex align-items-center justify-content-around flex-row' >
-          <p>Name: ${item.name}</p>
-          <p>Price: ${item.price}</p>
-          <p>Quantity: ${item.quantity}</p>
-          <i class="fa-solid fa-trash-can btn btn-danger Remove-product" data-RemoveProduct = '${item.id}'></i>
+      <div class = 'car_product d-flex align-items- ' >
+          <p>${item.name}</p>
+          <p>${item.price}</p>
+          <div class = 'Counter d-flex align-items-center justify-content-center '>
+         <button class ='btn btn-primary'>+</button>
+         <input type="text" value = ${item.quantity}>
+         <button class =' btn btn-primary'>-</button>
+          </div>
+<div class='remove-content d-flex align-items-center justify-content-center'>
+ <button class = "Remove-product btn btn-danger "  data-removeproduct = '${item.id}' >delete</button>
+</div>
       </div>
+      <hr/>    
+`
+        ;     
+    })
+    .join("");  
   
-     
-`;
-      
-    })  .join("");
+
+ 
+  
+ 
   totalAmount.innerText = `Total: $${cart.totalAmount}`;
-  console.log(cart);
   cartDiv.innerHTML = product;
   // Update the number of items on the page
   // const product = document.getElementById("product");
@@ -70,18 +79,32 @@ function updateCartInformationOnPage(cart) {
   //   product.appendChild(pPrice);
   //   product.appendChild(pQty);
   // }
-  const Btn_Remove = [document.querySelectorAll('.Remove-product')];
- 
-   
-   
-  console.log(Btn_Remove.dataset.RemoveProduct)
- 
-
 }
 
-showCart.addEventListener("click", function () {
+  const BTn_Remove = [...document.querySelectorAll(".Remove-product")];
+  console.log(BTn_Remove)
+  BTn_Remove.forEach(Btn => {
+    Btn.addEventListener("click",() => {
+      const ProductIdRemove = Btn.dataset.removeproduct;
+      console.log(json.stringify(ProductIdRemove));
+      fetch('/remove-from-cart',{
+        method: 'POST',
+        headers: {
+          'Content-Type':'application/json',
+        },
+        body: json.stringify({ProductIdRemove})
+      })
+    })
+  })
+
+
+
+
+
+showCart.addEventListener("click",function (e) {
+  e.stopPropagation();
   cartHtml.classList.toggle("hidden");
-  // cartHtml.classList.toggle("overlay");
+  data();
 });
 
 // start ads window
