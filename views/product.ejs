@@ -1,5 +1,8 @@
 <%- include("./partials/header") %>
-
+<!-- src <%= foundProduct.images[0].url %> -->
+<!-- <%= foundProduct.brandName %> -->
+<!--   <%= foundProduct.description %> -->
+<!-- <%= foundProduct.price %> -->
     <!-- Landing start -->
     <section class="landing position-relative mb-3">
         <%- include("./partials/navbar") %>
@@ -8,36 +11,47 @@
     <div class="women-banner conatiner mx-3 mb-3">
         <img src="/images/women/winter.jpg" alt="banner-img" class="img-fluid" />
     </div>
-
-    <div class="main container-fluid my-5">
-        <div class="row pt-4">
-            <div class="col-8 col-md-9 d-flex justify-content-center justify-content-lg-between flex-wrap gap-3">
-                <div class="product-card col-3 d-flex flex-column ">
-                    <div class="img-section col-12">
-                        <img src=" <%= foundProduct.images[0].url %> " alt="" class="card-img-top" alt="...">
-                    </div>
-                    <div class="description-product">
-                        <h4 class="Brand-name col-12 ps-3">Brand name: <%= foundProduct.brandName %>
-                        </h4>
-                        <h5 class="text-muted col-12 ps-3">Type: <%= foundProduct.type %>
-                        </h5>
-                        <p class="details-product col-12 ps-3">
-                            <%= foundProduct.description %>
-                        </p>
-                        <h6 class="product-price col-12 ps-3"><span class="new-price me-4">EG 300</span>
-                            <del>EG <%= foundProduct.price %>
-                            </del>
-                        </h6>
-                    </div>
-                    <div class="BTn-section d-flex align-items-center justify-content-between">
-                        <span class="add-to-cart d-flex col-5 ">Add To cart</span>
-                        <span class="buy-now d-flex col-5">Buy Now</span>
+<!-- start view product  -->
+<div class="viewProduct col-12">
+    <div class="container">
+        <div class="view_Content_Product col-12 d-flex align-items-center">
+            <div class="image_Product col-lg-6 col-xs-12">
+                <img src="<%= foundProduct.images[0].url %>" alt="">
+            </div>
+            <div class="information_Product col-lg-6 col-xs-12 d-flex align-items-center flex-column">
+                <div class="header_Info d-flex align-items-center flex-column mt-5">
+                    <p class="description fs-4 text-secondary">
+                        <%= foundProduct.description %>
+                    </p>
+                    <h2 class="text-capitalize"><%= foundProduct.brandName %></h2>
+                    <h5 class="type text-capitalize"><%= foundProduct.type %></h5>
+                    <div class="reviews d-flex align-items-center justify-content-between">
+                        <div class="starts me-4 ">
+                            <i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-regular fa-star white "></i>
+                            <i class="fa-regular fa-star white "></i>
+                        </div>
+                        <span class="count_Reviews ms-2">3 reviews</span>
+                        <span class="add_Reviews ms-5">Add Reviews</span>
                     </div>
                 </div>
+                <br>
+                <div class="Price_Info d-flex align-items-center flex-column justify-content-center mt-2">
+                    <h4 class="price_Value mb-2 text-success mb-5 pt-2"><%= foundProduct.price %> $</h4>
+                    </div>
+                    <div class="Add_To_Cart d-flex align-items-cente justify-content-center mt-5">
+                        <button class='btn btn-primary  Add_To_Cart_Btn'>Add to Cart</button>
+                    </div>
+                </div>
+                <div class="Footer_Info"></div>
             </div>
         </div>
     </div>
 
+<!-- end view product  -->
+  
 
 
     <%- include("./partials/footer") %>

@@ -1,3 +1,5 @@
+import { json } from "express";
+
 let sections_linkes = document.querySelectorAll(".sections_linkes li");
 let list_menu_links = document.querySelectorAll(".list_menu li");
 let image_section = document.querySelectorAll(".image_section");
@@ -7,8 +9,6 @@ const showCart = document.querySelector(".showCart");
 const addToCartButtons = document.querySelectorAll(".add-to-cart");
 const cartHtml = document.querySelector(".cart");
 
-// import axios from "./axios";
-// const axios = require("axios");
 
 for (let button of addToCartButtons) {
   button.addEventListener("click", async (e) => {
@@ -31,25 +31,41 @@ async function data() {
   updateCartInformationOnPage(res);
 }
 
+
 function updateCartInformationOnPage(cart) {
   // Update the total amount on the page
   const totalAmount = document.getElementById("totalAmount");
   const cartDiv = document.querySelector(".display-product");
+ const totalQuantity = document.querySelector('.quantity-value');
   const product = cart.items
     .map((item) => {
       return ` 
-    <p>Name: ${item.name}</p>
-    <p>Price: ${item.price}</p>
-    <p>Quantity: ${item.quantity}</p>
-`;
+      <div class = 'car_product d-flex align-items- ' >
+          <p>${item.name}</p>
+          <p>${item.price}</p>
+          <div class = 'Counter d-flex align-items-center justify-content-center '>
+         <button class ='btn btn-primary'>+</button>
+         <input type="text" value = ${item.quantity}>
+         <button class =' btn btn-primary'>-</button>
+          </div>
+<div class='remove-content d-flex align-items-center justify-content-center'>
+ <button class = "Remove-product btn btn-danger "  data-removeproduct = '${item.id}' >delete</button>
+</div>
+      </div>
+      <hr/>    
+`
+        ;     
     })
-    .join("");
+    .join("");  
+  
+
+ 
+  
+ 
   totalAmount.innerText = `Total: $${cart.totalAmount}`;
-  console.log(cart);
   cartDiv.innerHTML = product;
   // Update the number of items on the page
   // const product = document.getElementById("product");
-
   // Update the list of items on the page
   // product.innerHTML = "";
   // for (let item of cart.items) {
@@ -65,9 +81,30 @@ function updateCartInformationOnPage(cart) {
   // }
 }
 
-showCart.addEventListener("click", function () {
+  const BTn_Remove = [...document.querySelectorAll(".Remove-product")];
+  console.log(BTn_Remove)
+  BTn_Remove.forEach(Btn => {
+    Btn.addEventListener("click",() => {
+      const ProductIdRemove = Btn.dataset.removeproduct;
+      console.log(json.stringify(ProductIdRemove));
+      fetch('/remove-from-cart',{
+        method: 'POST',
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: json.stringify({ProductIdRemove})
+      })
+    })
+  })
+
+
+
+
+
+showCart.addEventListener("click",function (e) {
+  e.stopPropagation();
   cartHtml.classList.toggle("hidden");
-  // cartHtml.classList.toggle("overlay");
+  data();
 });
 
 // start ads window
@@ -84,7 +121,7 @@ menu_Icon.addEventListener("click", () => {
 });
 // end open side menu form BTn
 
-// start close Side menu form anywere
+// start close Side menu form anywhere
 document.body.addEventListener("click", (e) => {
   if (
     e.target.classList.contains("side_menu") ||
@@ -191,10 +228,13 @@ color_Picker.oninput = () => {
 
 // ////////////////////start-get-color//////////////////////////////////
 
-// ////////////////////start-get-data-atrrbiute--function//////////////
+// ////////////////////start-get-data-attribute--function//////////////
 let check_filter_data = document.querySelectorAll(".check_filter");
 check_filter_data.forEach((ele) => {
   console.log(ele);
 });
 
 // ////////////////////end-get-data-atrrbiute--function//////////////
+
+
+    // end price section in product page
