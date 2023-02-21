@@ -4,7 +4,9 @@
   "type": "module",
   "description": "",
   "main": "index.js",
+  "engines": {"node": "14.x"},
   "scripts": {
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -13,9 +15,7 @@
   },
   "author": "Exclusv",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Exclusv-developers/Exclusv/issues"
-  },
+  
   "homepage": "https://github.com/Exclusv-developers/Exclusv#readme",
   "dependencies": {
     "axios": "^1.2.5",
