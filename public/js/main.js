@@ -1,5 +1,3 @@
-import { json } from "express";
-
 let sections_linkes = document.querySelectorAll(".sections_linkes li");
 let list_menu_links = document.querySelectorAll(".list_menu li");
 let image_section = document.querySelectorAll(".image_section");
@@ -8,7 +6,6 @@ let side_Menu = document.querySelector(".side_menu");
 const showCart = document.querySelector(".showCart");
 const addToCartButtons = document.querySelectorAll(".add-to-cart");
 const cartHtml = document.querySelector(".cart");
-
 
 for (let button of addToCartButtons) {
   button.addEventListener("click", async (e) => {
@@ -31,12 +28,11 @@ async function data() {
   updateCartInformationOnPage(res);
 }
 
-
 function updateCartInformationOnPage(cart) {
   // Update the total amount on the page
   const totalAmount = document.getElementById("totalAmount");
   const cartDiv = document.querySelector(".display-product");
- const totalQuantity = document.querySelector('.quantity-value');
+  const totalQuantity = document.querySelector(".quantity-value");
   const product = cart.items
     .map((item) => {
       return ` 
@@ -53,15 +49,10 @@ function updateCartInformationOnPage(cart) {
 </div>
       </div>
       <hr/>    
-`
-        ;     
+`;
     })
-    .join("");  
-  
+    .join("");
 
- 
-  
- 
   totalAmount.innerText = `Total: $${cart.totalAmount}`;
   cartDiv.innerHTML = product;
   // Update the number of items on the page
@@ -81,27 +72,23 @@ function updateCartInformationOnPage(cart) {
   // }
 }
 
-  const BTn_Remove = [...document.querySelectorAll(".Remove-product")];
-  console.log(BTn_Remove)
-  BTn_Remove.forEach(Btn => {
-    Btn.addEventListener("click",() => {
-      const ProductIdRemove = Btn.dataset.removeproduct;
-      console.log(json.stringify(ProductIdRemove));
-      fetch('/remove-from-cart',{
-        method: 'POST',
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: json.stringify({ProductIdRemove})
-      })
-    })
-  })
+const BTn_Remove = [...document.querySelectorAll(".Remove-product")];
+console.log(BTn_Remove);
+BTn_Remove.forEach((Btn) => {
+  Btn.addEventListener("click", () => {
+    const ProductIdRemove = Btn.dataset.removeproduct;
+    console.log(json.stringify(ProductIdRemove));
+    fetch("/remove-from-cart", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: json.stringify({ ProductIdRemove }),
+    });
+  });
+});
 
-
-
-
-
-showCart.addEventListener("click",function (e) {
+showCart.addEventListener("click", function (e) {
   e.stopPropagation();
   cartHtml.classList.toggle("hidden");
   data();
@@ -236,5 +223,4 @@ check_filter_data.forEach((ele) => {
 
 // ////////////////////end-get-data-atrrbiute--function//////////////
 
-
-    // end price section in product page
+// end price section in product page
