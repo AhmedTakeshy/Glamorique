@@ -1,5 +1,5 @@
 {
-  "name": "exclusv",
+  "name": "glamorique",
   "version": "1.0.0",
   "type": "module",
   "description": "",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Exclusv-developers/Exclusv.git"
+    "url": "git+https://github.com/AhmedTakeshy/Glamorique.git"
   },
   "author": "Exclusv",
   "license": "ISC",
