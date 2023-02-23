@@ -11,7 +11,7 @@ import session from "express-session";
 import MongoStore from "connect-mongo";
 
 const app = express();
-// const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
