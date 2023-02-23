@@ -73,7 +73,6 @@ function updateCartInformationOnPage(cart) {
 }
 
 const BTn_Remove = [...document.querySelectorAll(".Remove-product")];
-console.log(BTn_Remove);
 BTn_Remove.forEach((Btn) => {
   Btn.addEventListener("click", () => {
     const ProductIdRemove = Btn.dataset.removeproduct;
@@ -187,12 +186,22 @@ Arrow_down.forEach((Arrow) => {
 });
 // ////////////////////end-Arrow-Down-function//////////////////////////
 // ////////////////////start-get-value//////////////////////////////////
-let lower_value_range = document.getElementById("lower");
-let max_value_range = document.getElementById("max");
-let lower_value_view = document.getElementById("min_value");
-let max_value_view = document.getElementById("max_value");
-max_value_view.innerHTML = "max $" + max_value_range.value;
-lower_value_view.innerHTML = "min $" + lower_value_range.value;
+let lower_value_range = document.getElementById("lower")
+  ? document.getElementById("lower")
+  : "";
+let max_value_range = document.getElementById("max")
+  ? document.getElementById("max")
+  : "";
+let lower_value_view = document.getElementById("min_value")
+  ? document.getElementById("min_value")
+  : "";
+let max_value_view = document.getElementById("max_value")
+  ? document.getElementById("max_value")
+  : "";
+max_value_view.innerHTML =
+  "max $" + (max_value_range ? max_value_range.value : "");
+lower_value_view.innerHTML =
+  "min $" + (lower_value_range ? lower_value_range.value : "");
 
 lower_value_range.oninput = function () {
   lower_value_range.value >= max_value_range.value
@@ -208,7 +217,9 @@ max_value_range.oninput = () => {
 };
 // ////////////////////end-get-value///////////////////////////////////
 // ////////////////////start-get-color//////////////////////////////////
-let color_Picker = document.getElementById("color_picker");
+let color_Picker = document.getElementById("color_picker")
+  ? document.getElementById("color_picker")
+  : "";
 color_Picker.oninput = () => {
   console.log(color_Picker.value);
 };
